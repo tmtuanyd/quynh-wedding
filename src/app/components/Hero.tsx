@@ -10,7 +10,8 @@ export default function Hero() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
     >
-      <div className="text-center space-y-4">
+      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="text-center space-y-4 relative">
         <h1 className="text-4xl md:text-6xl font-great">
           We Are Getting Married!
         </h1>
