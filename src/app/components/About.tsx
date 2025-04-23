@@ -18,8 +18,8 @@ export default function About() {
         />
         <div className="mt-8">
           <div>
-            <p className="font-great text-[35px] md:text-[45px]">Thư mời</p>
-            <p className="text-[15px] md:text-[25px]">
+            <p className="font-great text-[35px] lg:text-[45px]">Thư mời</p>
+            <p className="text-[15px] lg:text-[25px]">
               TRÂN TRỌNG KÍNH MỜI BẠN ĐẾN DỰ LỄ CƯỚI CỦA CHÚNG MÌNH
             </p>
           </div>
@@ -31,29 +31,29 @@ export default function About() {
             viewport={{ once: false, amount: 0.5 }} // Hiệu ứng chạy lại khi cuộn
             transition={{ duration: 1 }}
           >
-            <p className="text-4xl md:text-[52px] font-great yellow-text mx-auto">
+            <p className="text-4xl lg:text-[52px] font-great yellow-text mx-auto">
               Trần Thị Mai Huế
             </p>
-            <p className="text-3xl md:text-5xl font-clicker">&</p>
-            <p className="text-4xl md:text-[52px] font-great yellow-text mx-auto">
+            <p className="text-3xl lg:text-5xl font-clicker">&</p>
+            <p className="text-4xl lg:text-[52px] font-great yellow-text mx-auto">
               Phan Thế Chiến
             </p>
           </motion.div>
           <div>
-            <div className="md:pt-4">
-              <h3 className="text-2xl md:text-[34px]  uppercase tracking-tighter">
-                CHỦ NHẬT <span className="text-[45px] md:text-[90px]">18</span>{" "}
+            <div className="lg:pt-4">
+              <h3 className="text-2xl lg:text-[34px]  uppercase tracking-tighter">
+                CHỦ NHẬT <span className="text-[45px] lg:text-[90px]">18</span>{" "}
                 tháng 5 2025
               </h3>
-              <p className="text-base md:text-[24px] mt-4">
+              <p className="text-base lg:text-[24px] mt-4">
                 <span className="mr-2">|</span>08:30-11:00{" "}
                 <span className="mr-2">|</span>Tại tư gia nhà gái
               </p>
-              <p className="text-base md:text-[22px] italic mt-3">
+              <p className="text-base lg:text-[22px] italic mt-3">
                 Đội 7, thôn Xuân Phú, xã Xuân Phú, thành phố Bắc Giang, Bắc
                 Giang
               </p>
-              <p className="text-base md:text-[22px] italic mt-6">
+              <p className="text-base lg:text-[22px] italic mt-6">
                 Rất hân hạnh được đón tiếp
               </p>
             </div>
