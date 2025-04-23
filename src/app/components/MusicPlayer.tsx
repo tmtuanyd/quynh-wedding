@@ -24,7 +24,7 @@ export default function BackgroundMusic() {
       <audio ref={audioRef} loop src="/music/beautiful-in-white.mp3" />
       <button
         onClick={toggleMusic}
-        className="fixed bottom-5 right-5 bg-white/20 hover:bg-white/30 backdrop-blur-md p-2 rounded-full text-white z-50"
+        className="fixed bottom-5 right-5 bg-red-400 hover:bg-red-400/30 backdrop-blur-md p-2 rounded-full text-white z-50"
       >
         {isPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
       </button>

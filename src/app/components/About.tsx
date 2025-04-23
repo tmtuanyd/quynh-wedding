@@ -18,9 +18,13 @@ export default function About() {
           className="mx-auto filter invert"
         />
         <div className="space-y-8">
-          <p className="text-[15px] md:text-[25px]  pt-8">
-            TRÂN TRỌNG KÍNH MỜI BẠN ĐẾN DỰ LỄ CƯỚI CỦA CHÚNG MÌNH
-          </p>
+          <div>
+            <p className="font-great text-[35px] md:text-[45px]">Thư mời</p>
+            <p className="text-[15px] md:text-[25px]">
+              TRÂN TRỌNG KÍNH MỜI BẠN ĐẾN DỰ LỄ CƯỚI CỦA CHÚNG MÌNH
+            </p>
+          </div>
+
           <motion.div
             className="flex flex-col gap-4"
             initial={{ opacity: 0, y: 50 }} // Trạng thái ban đầu
@@ -52,7 +56,7 @@ export default function About() {
               </p>
               <div className="mt-6 ">
                 <a
-                  href="https://maps.app.goo.gl/NhkeXQDBs1wZvMoi6"
+                  href="https://maps.app.goo.gl/B9ev2rTtPUoK3WYP7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex gap-2 bg-[#bd9976] text-white px-6 py-3 rounded-lg shadow-md transition"
