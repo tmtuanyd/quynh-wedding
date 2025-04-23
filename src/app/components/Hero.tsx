@@ -15,7 +15,7 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl font-great">
           We Are Getting Married!
         </h1>
-        <p className="text-lg md:text-4xl font-great">
+        <p className="text-[26px] md:text-4xl font-great">
           Join us to celebrate our special day
         </p>
       </div>
