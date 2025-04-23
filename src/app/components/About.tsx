@@ -7,17 +7,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col text-black items-center justify-center gap-8"
+      className="min-h-screen flex flex-col text-black items-center justify-center gap-8 wedding-gradient"
     >
-      <div className="flex flex-col gap-4 items-center justify-center lg:max-w-[50%]">
-        <p className="uppercase font-semibold">Thân gửi bạn</p>
-        <h1 className="font-great text-[40px] lg:text-[56px]">Thiệp cưới</h1>
-        <p className="text-center">
-          Trân trọng kính mời bạn đến dự lễ cưới của chúng mình. Hãy cùng chia
-          sẻ những khoảnh khắc tuyệt đẹp trong đám cưới của vợ chồng mình nhé
-        </p>
-      </div>
-      <div className="text-center w-full lg:max-w-[50%] space-y-8 justify-center wedding-gradient px-4 py-8">
+      <div className="text-center max-w-2xl space-y-8 justify-center">
         <Image
           src="/images/about.svg"
           alt="Wedding"
@@ -26,12 +18,9 @@ export default function About() {
           className="mx-auto filter invert"
         />
         <div className="space-y-8">
-          <div>
-            <p className="text-[30px] md:text-[32px] font-great">Thân mời</p>
-            <p className="text-[15px] md:text-[25px] uppercase md:mb-[60px]">
-              Đến dự lễ cưới của chúng mình
-            </p>
-          </div>
+          <p className="text-[15px] md:text-[25px]  pt-8">
+            TRÂN TRỌNG KÍNH MỜI BẠN ĐẾN DỰ LỄ CƯỚI CỦA CHÚNG MÌNH
+          </p>
           <motion.div
             className="flex flex-col gap-4"
             initial={{ opacity: 0, y: 50 }} // Trạng thái ban đầu
@@ -63,7 +52,7 @@ export default function About() {
               </p>
               <div className="mt-6 ">
                 <a
-                  href="https://maps.app.goo.gl/vdYSdGUUrReVbCB6A"
+                  href="https://maps.app.goo.gl/NhkeXQDBs1wZvMoi6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex gap-2 bg-[#bd9976] text-white px-6 py-3 rounded-lg shadow-md transition"
