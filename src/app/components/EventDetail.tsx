@@ -85,8 +85,12 @@ export default function EventDetails() {
           </div>
         </div>
         <p className="text-sm md:text-base italic mt-6">
-          Trân trọng kính mời bạn đến dự lễ cưới của chúng mình. Hãy cùng chia
-          sẻ những khoảnh khắc tuyệt đẹp trong đám cưới của vợ chồng mình nhé!
+          Chúng mình rất trân trọng sự có mặt của bạn trong ngày quan trọng nhất
+          của cuộc đời. Sự hiện diện, tình cảm và những lời chúc tốt đẹp của bạn
+          đã làm cho ngày đặc biệt của chúng mình thêm trọn vẹn.
+        </p>
+        <p className="text-base md:text-lg mt-6 font-great">
+          Huế & Chiến with Love
         </p>
       </motion.div>
     </section>

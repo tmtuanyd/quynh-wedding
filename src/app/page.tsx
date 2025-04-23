@@ -6,7 +6,6 @@ import WelcomeIntro from "./components/WelcomeIntro";
 import MusicPlayer, { musicPlayerControl } from "./components/MusicPlayer";
 import About from "./components/About";
 import EventDetails from "./components/EventDetail";
-import Location from "./components/Location";
 import BrideGroom from "./components/BrideGroom";
 
 export default function Home() {
@@ -39,7 +38,6 @@ export default function Home() {
           <BrideGroom />
           <About />
           <EventDetails />
-          <Location />
         </>
       )}
       <MusicPlayer />
