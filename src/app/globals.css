@@ -96,6 +96,16 @@ section {
   background-size: cover;
 }
 
+.wedding-gradient {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.9),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url("/images/wedding.jpg");
+  background-size: cover;
+}
+
 /* Cards with shadow and hover effect */
 .card {
   background-color: var(--secondary-color);
@@ -108,21 +118,6 @@ section {
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-button {
-  padding: 1rem 2rem;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-  background-color: var(--highlight-color);
-  transform: translateY(-4px);
 }
 
 /* Hover and focus for inputs */
