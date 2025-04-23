@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import WelcomeIntro from "./components/WelcomeIntro";
 import MusicPlayer, { musicPlayerControl } from "./components/MusicPlayer";
 import About from "./components/About";
 
 export default function Home() {
+  const [showIntro, setShowIntro] = useState(true);
+
   useEffect(() => {
     const handler = () => {
       const audio = document.querySelector("audio") as HTMLAudioElement;
@@ -23,9 +25,17 @@ export default function Home() {
 
   return (
     <>
-      <WelcomeIntro onStart={musicPlayerControl.startPlaying} />
-      <Hero />
-      <About />
+      <WelcomeIntro
+        onStart={musicPlayerControl.startPlaying}
+        showIntro={showIntro}
+        setShowIntro={setShowIntro}
+      />
+      {!showIntro && (
+        <>
+          <Hero />
+          <About />
+        </>
+      )}
       <MusicPlayer />
     </>
   );

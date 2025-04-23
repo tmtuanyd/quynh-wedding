@@ -29,7 +29,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Lễ cưới của Mai Huế & Thế Chiến",
+  title: "Mai Huế & Thế Chiến",
   description: "Chào mừng bạn đến với lễ cưới của chúng tôi",
 };
 

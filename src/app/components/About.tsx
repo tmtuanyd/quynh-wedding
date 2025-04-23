@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import WaveText from "./WaveText";
 
 export default function About() {
   return (
@@ -11,6 +12,7 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1 }}
+      custom={0}
     >
       <div className="text-center max-w-2xl space-y-8 justify-center">
         <Image
@@ -25,13 +27,15 @@ export default function About() {
         </p>
 
         <div className="flex flex-col gap-4">
-          <h2 className="text-4xl md:text-[52px] font-great yellow-text">
-            Trần Thị Mai Huế
-          </h2>
+          <WaveText
+            text="Trần Thị Mai Huế"
+            className="text-4xl md:text-[52px] font-great yellow-text mx-auto"
+          />
           <p className="text-3xl md:text-5xl font-clicker">&</p>
-          <h2 className="text-4xl md:text-[52px] font-great yellow-text">
-            Phan Thế Chiến
-          </h2>
+          <WaveText
+            text="Phan Thế Chiến"
+            className="text-4xl md:text-[52px] font-great yellow-text mx-auto"
+          />
         </div>
         <div>
           <div className="md:pt-4">

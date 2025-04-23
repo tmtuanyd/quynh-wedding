@@ -1,25 +1,28 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 interface Props {
   onStart: () => void;
+  showIntro: boolean;
+  setShowIntro: (show: boolean) => void;
 }
 
-export default function WelcomeIntro({ onStart }: Props) {
-  const [showIntro, setShowIntro] = useState(true);
-
+export default function WelcomeIntro({
+  onStart,
+  showIntro,
+  setShowIntro,
+}: Props) {
   const handleStart = () => {
     onStart(); // phát nhạc
     setShowIntro(false); // bắt đầu animation ẩn
-    const hero = document.getElementById("hero");
-    if (hero) {
-      setTimeout(() => {
-        hero.scrollIntoView({ behavior: "smooth" });
-      }, 300); // delay chút để animation chạy xong
-    }
+    // const hero = document.getElementById("hero");
+    // if (hero) {
+    //   setTimeout(() => {
+    //     hero.scrollIntoView({ behavior: "smooth" });
+    //   }, 300); // delay chút để animation chạy xong
+    // }
   };
 
   return (
