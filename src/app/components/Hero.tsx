@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <motion.section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-cover  bg-top  text-white bg-[url('/images/hero.jpg')] "
+      className="min-h-screen flex items-center justify-center bg-cover  bg-top  text-white bg-[url('/images/hero.jpg')] bg-fixed"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
