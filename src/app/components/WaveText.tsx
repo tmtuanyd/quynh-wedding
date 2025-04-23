@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
 
 type Props = {
   text: string;
@@ -11,44 +10,29 @@ type Props = {
 
 export default function WaveText({ text, className = "" }: Props) {
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: false, // Hiệu ứng sẽ chạy lại khi phần tử xuất hiện trong khung nhìn
     threshold: 0.5,
   });
 
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    if (inView) {
-      setShow(true);
-      const timeout = setTimeout(() => setShow(false), 1000); // allow re-trigger
-      return () => clearTimeout(timeout);
-    }
-  }, [inView]);
-
   return (
-    <div ref={ref} className={`flex gap-[1px] ${className}`}>
-      {text.split("").map((char, i) => (
-        <motion.span
-          key={`${show}-${i}`}
-          className="inline-block"
-          initial={{ y: 0, opacity: 1 }}
-          animate={
-            show
-              ? {
-                  y: [10, -10, 0],
-                  opacity: [0, 1, 1],
-                }
-              : { y: 0, opacity: 1 } // giữ nguyên trạng thái cuối cùng
-          }
-          transition={{
-            delay: i * 0.06,
-            duration: 0.6,
-            ease: "easeInOut",
-          }}
-        >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
-      ))}
-    </div>
+    <motion.div
+      ref={ref}
+      className={`inline-block ${className}`}
+      initial={{ y: 0, opacity: 0 }}
+      animate={
+        inView
+          ? {
+              y: [0, -20, 10, -5, 0], // Lượn sóng lên xuống
+              opacity: [0, 1, 1, 1, 1], // Hiện dần
+            }
+          : { y: 0, opacity: 0 } // Trạng thái ban đầu khi phần tử không trong khung nhìn
+      }
+      transition={{
+        duration: 1.5, // Thời gian hiệu ứng
+        ease: "easeInOut", // Hiệu ứng mượt
+      }}
+    >
+      {text}
+    </motion.div>
   );
 }
