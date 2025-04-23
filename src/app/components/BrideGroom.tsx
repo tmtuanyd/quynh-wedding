@@ -7,7 +7,7 @@ const BrideGroom = () => {
         {/* Cô Dâu */}
         <div className="relative flex flex-col lg:flex-row gap-4 items-center">
           <div className="w-full lg:w-1/2 flex gap-4 relative items-center">
-            <div className="relative w-[50%] h-[300px] lg:h-[400px] overflow-hidden rounded-tr-[100px]  shadow-lg">
+            <div className="relative w-[50%] h-[250px] lg:h-[400px] overflow-hidden rounded-tr-[100px]  shadow-lg">
               <img
                 src="/images/gai/co dau.jpg"
                 alt="Cô Dâu"
@@ -50,7 +50,7 @@ const BrideGroom = () => {
         {/* Chú Rể */}
         <div className="relative flex flex-col lg:flex-row-reverse gap-4 items-center">
           <div className="w-full lg:w-1/2 flex gap-4 relative flex-row-reverse items-center">
-            <div className="relative w-[50%] h-[300px] lg:h-[400px] overflow-hidden rounded-tr-[100px]  shadow-lg">
+            <div className="relative w-[50%] h-[250px] lg:h-[400px] overflow-hidden rounded-tl-[100px]  shadow-lg">
               <img
                 src="/images/trai/chu re.jpg"
                 alt="Chú Rể"
