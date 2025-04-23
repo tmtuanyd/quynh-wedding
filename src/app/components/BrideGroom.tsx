@@ -56,7 +56,7 @@ const BrideGroom = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 overflow-hidden">
             <motion.p
               variants={brideTextVariant}
               initial="hidden"
@@ -67,7 +67,7 @@ const BrideGroom = () => {
               Em - một cô gái đa sầu, đa cảm, thật may mắn khi gặp được anh. Cảm
               ơn anh luôn quan tâm, chăm sóc em thật nhiều, nuông chiều những
               khi em giận hờn vô cớ. Bắt đầu từ hôm nay chúng ta sẽ viết nên một
-              chương mới của cuộc đời, bằng tình thương yêu và hạnh phúc. Đồng
+              chương mới của cuộc đời, bằng tình thương yêu và hạnh phúc. Đong
               đầy anh nhé!
             </motion.p>
           </div>
@@ -114,7 +114,7 @@ const BrideGroom = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 overflow-hidden">
             <motion.p
               variants={groomTextVariant}
               initial="hidden"
@@ -122,10 +122,11 @@ const BrideGroom = () => {
               viewport={{ once: false, amount: 0.5 }}
               className="italic"
             >
-              Anh - một chàng trai mạnh mẽ, luôn là chỗ dựa vững chắc cho em.
-              Cảm ơn em đã đến bên anh, mang đến niềm vui và hạnh phúc. Anh hứa
-              sẽ luôn yêu thương, bảo vệ và đồng hành cùng em trên mọi chặng
-              đường phía trước.
+              Hạnh phúc nhất trên đời không phải là việc gặp được người tuyệt
+              vời nhất ở những tháng ngày đẹp nhất. Mà là gặp một người từ từ
+              nhìn mình già đi, không cần ở những năm tháng đẹp nhất, mà là đúng
+              người, đúng thời điểm. Anh rất hạnh phúc vì gặp được em - người
+              con gái cho anh biết thế nào là yêu. Cùng anh về nhà em nhé!
             </motion.p>
           </div>
         </div>
