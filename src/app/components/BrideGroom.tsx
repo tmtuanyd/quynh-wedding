@@ -64,11 +64,11 @@ const BrideGroom = () => {
               viewport={{ once: false, amount: 0.5 }}
               className="italic"
             >
-              Em - một cô gái đa sầu, đa cảm, thật may mắn khi gặp được anh. Cảm
-              ơn anh luôn quan tâm, chăm sóc em thật nhiều, nuông chiều những
-              khi em giận hờn vô cớ. Bắt đầu từ hôm nay chúng ta sẽ viết nên một
-              chương mới của cuộc đời, bằng tình thương yêu và hạnh phúc. Đong
-              đầy anh nhé!
+              Sự xuất hiện của anh trong cuộc đời em như một điều kì diệu. Anh
+              như ánh nắng sưởi ấm thế giới của em, từ ngày hôm nay dưới ánh
+              nắng mặt trời em sẽ luôn có hai chiếc bóng, bên trái là của em,
+              bên phải cũng là của em. Chúng ta cùng viết lên một chương mới
+              cuộc đời, bằng tình yêu thương và hạnh phúc đong đầy anh nhé!
             </motion.p>
           </div>
         </div>
