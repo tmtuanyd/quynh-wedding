@@ -50,7 +50,7 @@ export default function WelcomeIntro({
             onClick={handleStart}
             className="px-10 py-4 bg-gradient-to-r from-gray-200 to-gray-400 text-gray-900 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl hover:from-gray-300 hover:to-gray-500 transition-all duration-300 transform hover:scale-105 border border-gray-300"
           >
-            Mở thiệp cưới 💍
+            Wedding Invitation 💍
           </button>
 
           <motion.div

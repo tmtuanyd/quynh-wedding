@@ -13,11 +13,11 @@ const BrideGroom = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 1 } },
   };
   return (
-    <section className="relative bg-white  text-black">
+    <section className="relative bride-bg text-black">
       <div className="flex flex-col gap- items-center">
         {/* Cô Dâu */}
         <div className="relative flex flex-col lg:flex-row gap-4 items-center">
-          <div className="w-full lg:w-1/2 flex gap-4 relative items-center">
+          <div className="w-full lg:w-1/2 flex gap-2 relative items-center">
             <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tr-[100px]  shadow-lg">
               <Image
                 src="/images/gai/co dau.jpg"
@@ -51,8 +51,10 @@ const BrideGroom = () => {
               </div>
             </div>
 
-            <div className="mb-[80px] relative">
-              <p className="text-3xl font-great italic">Mai Huế</p>
+            <div className="mb-[80px] relative w-1/2">
+              <p className="text-[40px] font-great italic tracking-tighter">
+                Mai Huế
+              </p>
             </div>
           </div>
 
@@ -62,7 +64,7 @@ const BrideGroom = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.5 }}
-              className="italic"
+              className="italic text-white"
             >
               Sự xuất hiện của anh trong cuộc đời em như một điều kì diệu. Anh
               như ánh nắng sưởi ấm thế giới của em, từ ngày hôm nay dưới ánh
@@ -110,7 +112,7 @@ const BrideGroom = () => {
             </div>
 
             <div className="mb-[80px] relative">
-              <p className="text-3xl font-great italic">Thế Chiến</p>
+              <p className="text-[40px] font-great italic">Thế Chiến</p>
             </div>
           </div>
 
@@ -120,7 +122,7 @@ const BrideGroom = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.5 }}
-              className="italic"
+              className="italic text-white"
             >
               Hạnh phúc nhất trên đời không phải là việc gặp được người tuyệt
               vời nhất ở những tháng ngày đẹp nhất. Mà là gặp một người từ từ

@@ -76,7 +76,20 @@ section {
       rgba(80, 80, 80, 1),
       rgba(240, 240, 240, 0.02)
     ),
-    url(/images/event.jpg);
+    url(/images/event-bg.png);
+  background-attachment: fixed;
+  background-position: center 42%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bride-bg {
+  background: linear-gradient(
+      to top,
+      rgba(80, 80, 80, 1),
+      rgba(240, 240, 240, 0.02)
+    ),
+    url(/images/bride.png);
   background-attachment: fixed;
   background-position: center 42%;
   background-repeat: no-repeat;
@@ -100,7 +113,8 @@ section {
   .hero-bg,
   .event-bg,
   .welcome-bg,
-  .wedding-gradient {
+  .wedding-gradient,
+  .bride-bg {
     background-attachment: scroll; /* Chuyển sang scroll trên thiết bị di động */
   }
 }

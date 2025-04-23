@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-white hero-bg"
+      className="min-h-screen flex flex-col items-center justify-center text-white hero-bg relative"
     >
       {/* Nội dung chính */}
       <div className="text-center space-y-4">
@@ -80,6 +80,12 @@ export default function Hero() {
               );
             })}
         </div>
+      </div>
+      <div className="absolute bottom-20 md:bottom-10">
+        <p className="uppercase text-wxl text-center">
+          Quyết định bên nhau trọn đời
+        </p>
+        <p className="font-great text-2xl text-center">Save the date</p>
       </div>
     </section>
   );

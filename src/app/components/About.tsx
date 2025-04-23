@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
 
 export default function About() {
   return (
@@ -9,7 +8,7 @@ export default function About() {
       id="about"
       className="min-h-screen flex flex-col text-black items-center justify-center gap-8 wedding-gradient"
     >
-      <div className="text-center max-w-2xl space-y-8 justify-center">
+      <div className="text-center max-w-2xl justify-center">
         <Image
           src="/images/about.svg"
           alt="Wedding"
@@ -17,7 +16,7 @@ export default function About() {
           height={83}
           className="mx-auto filter invert"
         />
-        <div className="space-y-8">
+        <div className="mt-8">
           <div>
             <p className="font-great text-[35px] md:text-[45px]">Thư mời</p>
             <p className="text-[15px] md:text-[25px]">
@@ -26,7 +25,7 @@ export default function About() {
           </div>
 
           <motion.div
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 my-8"
             initial={{ opacity: 0, y: 50 }} // Trạng thái ban đầu
             whileInView={{ opacity: 1, y: 0 }} // Trạng thái khi xuất hiện trong khung nhìn
             viewport={{ once: false, amount: 0.5 }} // Hiệu ứng chạy lại khi cuộn
@@ -42,7 +41,7 @@ export default function About() {
           </motion.div>
           <div>
             <div className="md:pt-4">
-              <h3 className="text-2xl md:text-[34px]  uppercase">
+              <h3 className="text-2xl md:text-[34px]  uppercase tracking-tighter">
                 CHỦ NHẬT <span className="text-[45px] md:text-[90px]">18</span>{" "}
                 tháng 5 2025
               </h3>
@@ -54,21 +53,14 @@ export default function About() {
                 Đội 7, thôn Xuân Phú, xã Xuân Phú, thành phố Bắc Giang, Bắc
                 Giang
               </p>
-              <div className="mt-6 ">
-                <a
-                  href="https://maps.app.goo.gl/B9ev2rTtPUoK3WYP7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex gap-2 bg-[#bd9976] text-white px-6 py-3 rounded-lg shadow-md transition"
-                >
-                  Xem trên Google Maps <MapPin className="text-white w-6 h-6" />
-                </a>
-              </div>
+              <p className="text-base md:text-[22px] italic mt-6">
+                Rất hân hạnh được đón tiếp
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-center gap-[40px] pt-8">
+        <div className="flex justify-center gap-[40px] pt-8 relative">
           <div className="w-[100px] lg:w-[216px]">
             <Image
               src="/images/decor-left.svg"
@@ -88,6 +80,33 @@ export default function About() {
               layout="responsive"
               className="filter invert"
             />
+          </div>
+
+          <div className="flex items-center absolute gap-2">
+            <a
+              href="tel:0975294512"
+              className="flex items-center justify-center w-[40px] h-[40px] gap-2 bg-[#bd9976] text-white rounded-full shadow-md transition"
+            >
+              <Image
+                src="/images/phone.svg"
+                alt="Location"
+                width={20}
+                height={20}
+              />
+            </a>
+            <a
+              href="https://maps.app.goo.gl/B9ev2rTtPUoK3WYP7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-[40px] h-[40px] gap-2 bg-[#bd9976] text-white rounded-full shadow-md transition"
+            >
+              <Image
+                src="/images/map.svg"
+                alt="Location"
+                width={20}
+                height={20}
+              />
+            </a>
           </div>
         </div>
       </div>
