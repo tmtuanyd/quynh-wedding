@@ -1,22 +1,40 @@
 export default function Location() {
   return (
-    <section className="bg-pink-100 py-16 px-4 text-center">
-      <h2 className="text-3xl text-pink-700 font-cursive mb-4">
-        Địa điểm tổ chức
-      </h2>
-      <p className="text-lg text-gray-700 mb-4">
-        Nhà hàng Hoa Hồng, 123 Đường Tình Yêu, Quận 1, TP. Hồ Chí Minh
-      </p>
+    <section className="py-16 px-4 text-center  flex flex-col items-center justify-center wedding-gradient text-black">
+      {/* Tiêu đề */}
+      <div className="mb-8">
+        <h2 className="text-4xl md:text-6xl  font-great mb-4 ">Địa điểm</h2>
+        <p className="text-lg italic">
+          Chúng mình rất hân hạnh được đón tiếp bạn tại
+        </p>
+      </div>
 
-      <div className="max-w-3xl mx-auto">
+      {/* Thông tin nhà gái */}
+      <div>
+        <h3 className="text-2xl font-semibold mb-4 flex items-center justify-center">
+          <span className="mr-2">🏡</span> Nhà gái
+        </h3>
+        <div className="text-left">
+          <p className="text-lg mb-2 flex items-center">
+            <span className="mr-2 ">👨</span>
+            Ông: <span className="font-medium ml-1">Trần Văn Huấn</span>
+          </p>
+          <p className="text-lg flex items-center">
+            <span className="mr-2 ">👩</span>
+            Bà: <span className="font-medium ml-1">Hà Thị Quy</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Bản đồ */}
+      <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-lg mt-[40px]">
         <iframe
-          title="Wedding Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.456109595759!2d106.70042471533258!3d10.775658362121422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec5b3d0a97f%3A0xf8f106f9e1a7dcf7!2zQ2h1bmcgQ2jhu6MgVGjhuqFtLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRLCBUUC4gSOG7kyBDaMOtbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1617709153896!5m2!1sen!2s"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25722.048397745442!2d106.25139718042627!3d21.237781237428564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313571fd1a2be03b%3A0x93546ade412142fd!2zWHXDom4gUGjDuiwgVHAuIELhuq9jIEdpYW5nLCBC4bqvYyBHaWFuZywgVmnhu4d0IE5hbQ!5e1!3m2!1svi!2s!4v1745398895643!5m2!1svi!2s"
           width="100%"
           height="400"
-          loading="lazy"
           allowFullScreen
-          className="rounded-xl shadow-md border-2 border-pink-300"
+          loading="lazy"
+          className="border-0"
         ></iframe>
       </div>
     </section>
