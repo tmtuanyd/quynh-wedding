@@ -26,9 +26,12 @@ export default function About() {
           className="mx-auto filter invert"
         />
         <div className="space-y-8">
-          <p className="text-[30px] md:text-[32px] font-great pt-8">
-            Tới dự lễ thành hôn của hai chúng tôi
-          </p>
+          <div>
+            <p className="text-[30px] md:text-[32px] font-great">Thân mời</p>
+            <p className="text-[15px] md:text-[25px] uppercase md:mb-[60px]">
+              Đến dự lễ cưới của chúng mình
+            </p>
+          </div>
           <motion.div
             className="flex flex-col gap-4"
             initial={{ opacity: 0, y: 50 }} // Trạng thái ban đầu
