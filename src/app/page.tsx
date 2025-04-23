@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import WelcomeIntro from "./components/WelcomeIntro";
 import MusicPlayer, { musicPlayerControl } from "./components/MusicPlayer";
 import About from "./components/About";
+import EventDetails from "./components/EventDetail";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -34,6 +35,7 @@ export default function Home() {
         <>
           <Hero />
           <About />
+          <EventDetails />
         </>
       )}
       <MusicPlayer />

@@ -1,18 +1,12 @@
 "use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import WaveText from "./WaveText";
 
 export default function About() {
   return (
-    <motion.section
+    <section
       id="about"
       className="min-h-screen flex items-center justify-center green-gradient px-4"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-      custom={0}
     >
       <div className="text-center max-w-2xl space-y-8 justify-center">
         <Image
@@ -45,7 +39,7 @@ export default function About() {
             </h3>
             <p className="text-base md:text-[24px] mt-4">
               <span className="mr-2">|</span>09:00-11:00{" "}
-              <span className="mr-2">|</span>Tại nhà riêng
+              <span className="mr-2">|</span>Tại nhà gái
             </p>
             <p className="text-base md:text-[22px] italic mt-3">
               Đội 7, thôn Xuân Phú, xã Xuân Phú, thành phố Bắc Giang, Bắc Giang
@@ -73,6 +67,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

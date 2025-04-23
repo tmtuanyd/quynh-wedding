@@ -1,11 +1,7 @@
 // app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
-import {
-  Great_Vibes,
-  Clicker_Script,
-  Playfair_Display,
-} from "next/font/google";
+import { Great_Vibes, Clicker_Script, Lora } from "next/font/google";
 
 const greatVibes = Great_Vibes({
   weight: ["400"],
@@ -21,7 +17,7 @@ const clickerScript = Clicker_Script({
   variable: "--font-clicker-script",
 });
 
-const playfairDisplay = Playfair_Display({
+const playfairDisplay = Lora({
   weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",

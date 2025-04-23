@@ -29,28 +29,20 @@ export default function WelcomeIntro({
     <AnimatePresence>
       {showIntro && (
         <motion.div
-          className="fixed inset-0 bg-black text-white flex items-center justify-center flex-col z-50"
+          className="fixed inset-0 text-white flex items-center justify-center flex-col z-50 welcome-bg"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.h1
-            className="text-4xl sm:text-6xl font-light text-center font-great"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Welcome to Our Wedding
-          </motion.h1>
-
           <motion.p
-            className="text-xl mt-4 mb-8 text-center font-extralight font-great"
+            className="text-3xl mt-4 mb-8 text-center font-extralight font-great"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Mai Huế <span className="mx-2 font-clicker">&</span> Thế Chiến —
+            Mai Huế <span className="mx-2 font-clicker">&</span> Thế Chiến{" "}
+            <br />
             18/05/2025
           </motion.p>
 
