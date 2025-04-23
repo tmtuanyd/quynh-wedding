@@ -20,7 +20,7 @@ export default function EventDetails() {
   return (
     <div className="min-h-screen flex items-center justify-center event-bg lg:py-8">
       <motion.div
-        className="bg-white/20 backdrop-blur-md rounded-lg px-4 py-8 lg:p-12 text-center text-white shadow-lg relative w-full h-full lg:w-[600px] lg:h-auto max-w-full"
+        className="bg-white/20 backdrop-blur-md lg:rounded-lg px-4 py-8 lg:p-12 text-center text-white shadow-lg relative w-full min-h-screen lg:w-[600px] lg:h-auto max-w-full"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
