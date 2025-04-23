@@ -55,7 +55,7 @@ export default function About() {
               </h3>
               <p className="text-base md:text-[24px] mt-4">
                 <span className="mr-2">|</span>08:30-11:00{" "}
-                <span className="mr-2">|</span>Tại nhà gái
+                <span className="mr-2">|</span>Tại tư gia nhà gái
               </p>
               <p className="text-base md:text-[22px] italic mt-3">
                 Đội 7, thôn Xuân Phú, xã Xuân Phú, thành phố Bắc Giang, Bắc
