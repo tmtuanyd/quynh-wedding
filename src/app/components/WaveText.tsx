@@ -18,6 +18,7 @@ export default function WaveText({ text, className = "" }: Props) {
     <motion.div
       ref={ref}
       className={`inline-block ${className}`}
+      style={{ overflow: "visible" }} 
       initial={{ y: 0, opacity: 0 }}
       animate={
         inView

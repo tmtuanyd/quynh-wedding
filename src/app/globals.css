@@ -96,6 +96,15 @@ section {
   background-size: cover;
 }
 
+@media screen and (max-width: 768px) {
+  .hero-bg,
+  .event-bg,
+  .welcome-bg,
+  .wedding-gradient {
+    background-attachment: scroll; /* Chuyển sang scroll trên thiết bị di động */
+  }
+}
+
 .wedding-gradient {
   background: linear-gradient(
       to bottom,
