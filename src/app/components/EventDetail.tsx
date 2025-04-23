@@ -116,7 +116,7 @@ export default function EventDetails() {
           <div>
             <p className="text-sm lg:text-base italic mt-6">
               Chúng mình rất trân trọng sự có mặt của bạn trong ngày quan trọng
-              nhất của cuộc đời. ự hiện diện của bạn là niềm vinh hạnh cho gia
+              nhất của cuộc đời. Sự hiện diện của bạn là niềm vinh hạnh cho gia
               đình chúng mình!
             </p>
             <p className="text-base lg:text-lg mt-6 font-great">
