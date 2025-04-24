@@ -110,7 +110,7 @@ export default function EventDetails() {
                 11:30
               </p>
               <p className="text-base lg:text-xl uppercase">Chụp hình</p>
-              <p className="text-base lg:text-xl uppercase">First look</p>
+              <p className="text-base lg:text-xl uppercase">Photography</p>
             </div>
           </div>
           <div>
