@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Hero from "./components/Hero";
 import WelcomeIntro from "./components/WelcomeIntro";
 import MusicPlayer, { musicPlayerControl } from "./components/MusicPlayer";
@@ -10,20 +10,6 @@ import BrideGroom from "./components/BrideGroom";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
-
-  useEffect(() => {
-    const handler = () => {
-      const audio = document.querySelector("audio") as HTMLAudioElement;
-      if (audio && audio.paused) {
-        audio.play().catch(console.warn);
-      }
-    };
-
-    window.addEventListener("start-music", handler);
-    return () => {
-      window.removeEventListener("start-music", handler);
-    };
-  }, []);
 
   return (
     <>

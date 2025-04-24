@@ -18,7 +18,7 @@ const BrideGroom = () => {
         {/* Cô Dâu */}
         <div className="relative flex flex-col lg:flex-row gap-4 items-center">
           <div className="w-full lg:w-1/2 flex gap-2 relative items-center">
-            <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tr-[100px]  shadow-lg">
+            <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tr-[60px] lg:rounded-tr-[100px]">
               <Image
                 src="/images/gai/co dau.jpg"
                 alt="Cô Dâu"
@@ -41,7 +41,7 @@ const BrideGroom = () => {
               </div>
               <div className="w-15 h-20 lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
                 <Image
-                  src="/images/gai/co dau1.jpg"
+                  src="/images/gai/co dau2.jpg"
                   alt="Chi tiết cô dâu 2"
                   className="object-cover w-full h-full"
                   width={216}
@@ -52,7 +52,7 @@ const BrideGroom = () => {
             </div>
 
             <div className="mb-[80px] relative w-1/2">
-              <p className="text-[40px] font-great italic tracking-tighter">
+              <p className="text-[40px] font-great italic tracking-tighter text-[#B95C50]">
                 Mai Huế
               </p>
             </div>
@@ -64,7 +64,7 @@ const BrideGroom = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.5 }}
-              className="italic text-white"
+              className="italic text-neutral-700"
             >
               Sự xuất hiện của anh trong cuộc đời em như một điều kì diệu. Anh
               như ánh nắng sưởi ấm thế giới của em, từ ngày hôm nay dưới ánh
@@ -76,9 +76,9 @@ const BrideGroom = () => {
         </div>
 
         {/* Chú Rể */}
-        <div className="relative flex flex-col lg:flex-row-reverse gap-4 items-center">
+        <div className="relative flex flex-col lg:flex-row-reverse gap-4 items-center mt-4">
           <div className="w-full lg:w-1/2 flex gap-4 relative flex-row-reverse items-center">
-            <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tl-[100px]  shadow-lg">
+            <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tl-[60px] lg:rounded-tl-[100px]">
               <Image
                 src="/images/trai/chu re.jpg"
                 alt="Chú Rể"
@@ -91,7 +91,7 @@ const BrideGroom = () => {
             <div className="flex absolute right-[45%] top-[50%] gap-1">
               <div className="w-15 h-20 lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
                 <Image
-                  src="/images/trai/chu re1.jpg"
+                  src="/images/trai/chu re2.jpg"
                   alt="Chi tiết chú rể 1"
                   className="object-cover w-full h-full"
                   width={216}
@@ -112,7 +112,9 @@ const BrideGroom = () => {
             </div>
 
             <div className="mb-[80px] relative">
-              <p className="text-[40px] font-great italic">Thế Chiến</p>
+              <p className="text-[40px] font-great italic text-[#B95C50]">
+                Thế Chiến
+              </p>
             </div>
           </div>
 
@@ -122,7 +124,7 @@ const BrideGroom = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.5 }}
-              className="italic text-white"
+              className="italic text-neutral-700"
             >
               Hạnh phúc nhất trên đời không phải là việc gặp được người tuyệt
               vời nhất ở những tháng ngày đẹp nhất. Mà là gặp một người từ từ

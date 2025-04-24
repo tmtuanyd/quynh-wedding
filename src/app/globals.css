@@ -31,6 +31,8 @@
   font-family: var(--font-clicker-script);
 }
 
+
+
 .gray-gradient {
   background: var(--gray-gradient);
 }
@@ -84,14 +86,16 @@ section {
 }
 
 .bride-bg {
-  background: linear-gradient(
+  /* background: linear-gradient(
       to top,
       rgba(80, 80, 80, 1),
       rgba(240, 240, 240, 0.02)
     ),
-    url(/images/bride.png);
+    url(/images/bride1.jpg); */
+  background: url(/images/bride1.jpg);
   background-attachment: fixed;
-  background-position: center 42%;
+  /* background-position: center 42% */
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }

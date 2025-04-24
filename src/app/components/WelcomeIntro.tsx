@@ -15,14 +15,8 @@ export default function WelcomeIntro({
   setShowIntro,
 }: Props) {
   const handleStart = () => {
-    onStart(); // phát nhạc
-    setShowIntro(false); // bắt đầu animation ẩn
-    // const hero = document.getElementById("hero");
-    // if (hero) {
-    //   setTimeout(() => {
-    //     hero.scrollIntoView({ behavior: "smooth" });
-    //   }, 300); // delay chút để animation chạy xong
-    // }
+    onStart();
+    setShowIntro(false);
   };
 
   return (
@@ -35,8 +29,9 @@ export default function WelcomeIntro({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <div className="h-[300px]" />
           <motion.p
-            className="text-3xl mt-4 mb-8 text-center font-extralight font-great"
+            className="text-3xl mb-8 text-center font-extralight font-great"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}

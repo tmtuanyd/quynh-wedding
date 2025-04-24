@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 export default function BackgroundMusic() {
@@ -18,6 +18,21 @@ export default function BackgroundMusic() {
     }
     setIsPlaying(!isPlaying);
   };
+
+  useEffect(() => {
+    const handler = () => {
+      const audio = document.querySelector("audio") as HTMLAudioElement;
+      if (audio && audio.paused) {
+        audio.play().catch(console.warn);
+        setIsPlaying(true);
+      }
+    };
+
+    window.addEventListener("start-music", handler);
+    return () => {
+      window.removeEventListener("start-music", handler);
+    };
+  }, []);
 
   return (
     <>
