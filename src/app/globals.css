@@ -31,8 +31,6 @@
   font-family: var(--font-clicker-script);
 }
 
-
-
 .gray-gradient {
   background: var(--gray-gradient);
 }
@@ -48,6 +46,16 @@
 body {
   color: #b8b8b8;
   font-family: var(--font-playfair-display);
+  background: linear-gradient(
+    to bottom,
+    #fff8e1,
+    /* Vàng pastel nhạt */ #fce4ec,
+    /* Hồng pastel nhạt */ #e1f5fe /* Xanh pastel nhạt */
+  );
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 section {
@@ -111,6 +119,19 @@ section {
   background-position: center 20%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.timeline-bg {
+  background: linear-gradient(
+    to bottom right,
+    #fce4ec,
+    /* Hồng pastel nhạt */ #e1f5fe,
+    /* Xanh pastel nhạt */ #ede7f6 /* Tím pastel nhạt */
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
 }
 
 @media screen and (max-width: 768px) {

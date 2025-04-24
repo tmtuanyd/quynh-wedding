@@ -18,9 +18,9 @@ export default function EventDetails() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center event-bg lg:py-8">
+    <div className="min-h-screen flex items-center justify-center lg:py-8">
       <motion.div
-        className="bg-white/20 backdrop-blur-md lg:rounded-lg px-4 py-8 lg:p-12 text-center text-white shadow-lg relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full"
+        className="lg:timeline-bg backdrop-blur-md lg:rounded-lg px-4 py-8 lg:p-12 text-center text-black shadow-lg relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -49,13 +49,14 @@ export default function EventDetails() {
                 width={80}
                 height={80}
                 layout="responsive"
+                className="filter invert"
               />
             </div>
-            <div className="flex-1 h-[1px] bg-white/50"></div>
+            <div className="flex-1 h-[1px] bg-black/50"></div>
           </div>
           {/* Welcome Guests */}
           <div className="flex items-center gap-4">
-            <div className="flex-1 h-[1px] bg-white/50"></div>
+            <div className="flex-1 h-[1px] bg-black/50"></div>
             <div className="w-[40px] flex-shrink-0">
               <Image
                 src="/images/cheer.svg"
@@ -63,6 +64,7 @@ export default function EventDetails() {
                 width={80}
                 height={80}
                 layout="responsive"
+                className="filter invert"
               />
             </div>
             <div className="flex-1 text-left">
@@ -89,13 +91,14 @@ export default function EventDetails() {
                 width={80}
                 height={80}
                 layout="responsive"
+                className="filter invert"
               />
             </div>
-            <div className="flex-1 h-[1px] bg-white/50"></div>
+            <div className="flex-1 h-[1px] bg-black/50"></div>
           </div>
           {/* Dinner */}
           <div className="flex items-center gap-4">
-            <div className="flex-1 h-[1px] bg-white/50"></div>
+            <div className="flex-1 h-[1px] bg-black/50"></div>
             <div className="w-[40px]  flex-shrink-0">
               <Image
                 src="/images/camera.svg"
@@ -103,6 +106,7 @@ export default function EventDetails() {
                 width={80}
                 height={80}
                 layout="responsive"
+                className="filter invert"
               />
             </div>
             <div className="flex-1 text-left">

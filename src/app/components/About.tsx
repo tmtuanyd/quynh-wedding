@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col text-black items-center justify-center gap-8 wedding-gradient"
+      className="min-h-screen flex flex-col text-black items-center justify-center gap-8"
     >
       <div className="text-center max-w-2xl justify-center">
         <Image

@@ -13,7 +13,7 @@ const BrideGroom = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 1 } },
   };
   return (
-    <section className="relative bride-bg text-black">
+    <section className="relative text-black">
       <div className="flex flex-col gap- items-center">
         {/* Cô Dâu */}
         <div className="relative flex flex-col lg:flex-row gap-4 items-center">
