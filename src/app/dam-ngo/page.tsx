@@ -9,7 +9,7 @@ const page = () => {
           Mai Huế <span className="text-red-500 mx-[30px]">❤️</span> Thế Chiến
         </p>
       </div>
-      <p className="text-center mt-[30px] text-[50px]">01/05/2025</p>
+      <p className="text-center mt-[50px] text-[50px]">01/05/2025</p>
     </div>
   );
 };
