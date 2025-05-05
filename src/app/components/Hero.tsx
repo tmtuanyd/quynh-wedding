@@ -11,7 +11,7 @@ export default function Hero() {
       className="min-h-screen flex flex-col items-center justify-center text-white hero-bg relative"
     >
       {/* Nội dung chính */}
-      <div className="text-center space-y-4">
+      <div className="text-center space-y-4 mt-[100px]">
         <h1 className="text-4xl lg:text-6xl font-great">
           We Are Getting Married!
         </h1>
@@ -80,12 +80,12 @@ export default function Hero() {
               );
             })}
         </div>
-      </div>
-      <div className="absolute bottom-20 lg:bottom-10">
-        <p className="uppercase text-wxl text-center">
-          Quyết định bên nhau trọn đời
-        </p>
-        <p className="font-great text-2xl text-center">Save the date</p>
+        <div className="mt-[40px]">
+          <p className="uppercase text-wxl text-center">
+            Quyết định bên nhau trọn đời
+          </p>
+          <p className="font-great text-2xl text-center">Save the date</p>
+        </div>
       </div>
     </section>
   );
