@@ -238,3 +238,17 @@ img:hover {
     background-image: url("/images/wedding1.jpg");
   }
 }
+
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.zoom-animation {
+  animation: zoomInOut 1.5s infinite;
+}
