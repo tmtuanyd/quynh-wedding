@@ -24,7 +24,7 @@ export default function EventDetails() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
       >
         {/* Title */}
         <h2 className="text-4xl font-great mb-8">Timeline</h2>

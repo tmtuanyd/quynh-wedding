@@ -7,6 +7,7 @@ import MusicPlayer, { musicPlayerControl } from "./components/MusicPlayer";
 import About from "./components/About";
 import EventDetails from "./components/EventDetail";
 import BrideGroom from "./components/BrideGroom";
+import Album from "./components/Album";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -24,6 +25,7 @@ export default function Home() {
           <BrideGroom />
           <About />
           <EventDetails />
+          <Album />
         </>
       )}
       <MusicPlayer />

@@ -31,6 +31,10 @@
   font-family: var(--font-clicker-script);
 }
 
+.font-hepta {
+  font-family: var(--font-hepta-slab);
+}
+
 .gray-gradient {
   background: var(--gray-gradient);
 }
