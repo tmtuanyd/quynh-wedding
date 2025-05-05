@@ -101,69 +101,94 @@ const Album = () => {
         </div> */}
         {/* Third Row */}
         <div className="grid grid-cols-12 gap-2">
-          <motion.div
-            className="grid grid-rows-3 col-span-7 gap-2"
-            variants={leftAnimation}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <div className="overflow-hidden ">
+          <div className="grid grid-rows-3 col-span-7 gap-2">
+            <motion.div
+              className="overflow-hidden"
+              variants={leftAnimation}
+              initial="hidden"
+              whileInView="visible"
+            >
               <img
                 src={images[3]}
                 alt="Photo 2"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
-            </div>
-            <div className="overflow-hidden ">
+            </motion.div>
+            <motion.div
+              variants={leftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              className="overflow-hidden "
+            >
               <img
                 src={images[1]}
                 alt="Photo 2"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
-            </div>
-            <div className="overflow-hidden ">
+            </motion.div>
+            <motion.div
+              variants={leftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              className="overflow-hidden "
+            >
               <img
                 src={images[4]}
                 alt="Photo 2"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
-            </div>
-          </motion.div>
-          <motion.div
-            className="grid grid-rows-4 col-span-5 gap-2"
-            variants={rightAnimation}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <div className="overflow-hidden ">
+            </motion.div>
+          </div>
+          <div className="grid grid-rows-4 col-span-5 gap-2">
+            <motion.div
+              variants={rightAnimation}
+              initial="hidden"
+              whileInView="visible"
+              className="overflow-hidden "
+            >
               <img
                 src={images[0]}
                 alt="Photo 2"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
-            </div>
-            <div className="overflow-hidden ">
+            </motion.div>
+            <motion.div
+              variants={rightAnimation}
+              initial="hidden"
+              whileInView="visible"
+              className="overflow-hidden "
+            >
               <img
                 src={images[2]}
                 alt="Photo 2"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
-            </div>
-            <div className="overflow-hidden ">
+            </motion.div>
+            <motion.div
+              variants={rightAnimation}
+              initial="hidden"
+              whileInView="visible"
+              className="overflow-hidden "
+            >
               <img
                 src={images[5]}
                 alt="Photo 2"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
-            </div>
-            <div className="overflow-hidden ">
+            </motion.div>
+            <motion.div
+              variants={rightAnimation}
+              initial="hidden"
+              whileInView="visible"
+              className="overflow-hidden "
+            >
               <img
                 src={images[6]}
                 alt="Photo 2"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>
