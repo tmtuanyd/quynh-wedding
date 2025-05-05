@@ -20,7 +20,7 @@ const BrideGroom = () => {
           <div className="w-full lg:w-1/2 flex gap-2 relative items-center">
             <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tr-[60px] lg:rounded-tr-[100px]">
               <Image
-                src="/images/gai/co dau.jpg"
+                src="/images/album/29.jpg"
                 alt="Cô Dâu"
                 className="object-cover w-full h-full"
                 width={216}
