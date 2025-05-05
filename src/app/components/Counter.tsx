@@ -35,8 +35,8 @@ const Counter = () => {
       <p className="font-style text-4xl">Countdown</p>
       <div className="text-center font-medium text-xl">
         <p>
-          {timeLeft.days} Days {timeLeft.hours} Hours {timeLeft.minutes} Minutes{" "}
-          {timeLeft.seconds} Seconds
+          {timeLeft.days} ngày {timeLeft.hours} giờ {timeLeft.minutes} phút{" "}
+          {timeLeft.seconds} giây
         </p>
         <p className="font-great mt-4">Until the Wedding Day!</p>
       </div>
