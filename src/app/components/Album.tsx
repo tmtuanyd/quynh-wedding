@@ -6,7 +6,7 @@ const images = [
   "/images/album/2.jpg",
   "/images/album/3.jpg",
   "/images/album/4.jpg",
-  "/images/album/5.jpg",
+  "/images/album/9.jpg",
   "/images/album/6.jpg",
   "/images/album/7.jpg",
 ];
@@ -23,7 +23,7 @@ const images = [
 
 const Album = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto ">
+    <div className="w-full max-w-6xl mx-auto mt-[-26px]">
       <div className="w-[100px] h-[100px] mx-auto">
         <img src="/images/heart.png" />
       </div>

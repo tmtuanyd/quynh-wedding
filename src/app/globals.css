@@ -85,6 +85,19 @@ section {
   background-size: cover;
 }
 
+.thank-bg {
+  background: linear-gradient(
+      to top,
+      rgba(80, 80, 80, 1),
+      rgba(240, 240, 240, 0.02)
+    ),
+    url(/images/album/5.jpg);
+  background-attachment: fixed;
+  background-position: center 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .damngo-bg {
   background: linear-gradient(
       to top,

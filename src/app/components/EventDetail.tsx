@@ -20,7 +20,7 @@ export default function EventDetails() {
   return (
     <div className="min-h-screen flex items-center justify-center lg:py-8">
       <motion.div
-        className="lg:rounded-lg px-4 py-8 lg:p-12 text-center text-black relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full"
+        className="lg:rounded-lg px-4 pt-8 lg:px-12 lg:pt-12 text-center text-black relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -118,7 +118,7 @@ export default function EventDetails() {
             </div>
           </div>
           <div>
-            <p className="text-sm lg:text-base italic mt-6">
+            <p className="text-sm lg:text-base italic ">
               Chúng mình rất trân trọng sự có mặt của bạn trong ngày quan trọng
               nhất của cuộc đời. Sự hiện diện của bạn là niềm vinh hạnh cho gia
               đình chúng mình!
