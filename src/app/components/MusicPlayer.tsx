@@ -81,7 +81,7 @@ export default function BackgroundMusic() {
       >
         <div className="flex justify-end">
           <button
-            onClick={toggleMusic}
+            onClick={closeModal}
             className=" bg-red-400 hover:bg-red-400/30 backdrop-blur-md p-2 w-[40px] h-[40px] rounded-full text-white z-50 ml-auto mb-4"
           >
             x

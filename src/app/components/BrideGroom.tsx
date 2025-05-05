@@ -14,9 +14,15 @@ const BrideGroom = () => {
   };
   return (
     <section className="relative text-black">
+      <div>
+        <p className="font-great text-[20px]">
+          Nhân danh tình yêu,hãy cùng đi hết quãng đời còn lại . Từ nay trở
+          đi,đông có năng ấm ,còn mình có nhau !
+        </p>
+      </div>
       <div className="flex flex-col gap- items-center">
         {/* Cô Dâu */}
-        <div className="relative flex flex-col  gap-4 items-center">
+        <div className="relative flex flex-col  gap-4 items-center mt-12">
           <div className="w-full  flex gap-2 relative items-center">
             <div className="relative w-[55%] h-[300px] lg:h-[400px] overflow-hidden ">
               <Image
