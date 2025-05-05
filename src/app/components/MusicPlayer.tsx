@@ -59,7 +59,7 @@ export default function BackgroundMusic() {
 
   return (
     <>
-      <audio ref={audioRef} loop src="/music/beautiful-in-white.mp3" />
+      <audio ref={audioRef} loop src="/music/bg-music.mp3" />
       <div className="flex flex-col gap-2 fixed bottom-5 right-5">
         <button
           onClick={openModal}
