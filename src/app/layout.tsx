@@ -48,6 +48,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi">
+      <head>
+        <link
+          rel="icon"
+          href="/images/favicon.png"
+          type="image/png"
+          sizes="32x32"
+        />
+      </head>
       <body
         className={`${playfairDisplay.className} ${greatVibes.className} ${clickerScript.className} ${heptaSlab.className}`}
       >

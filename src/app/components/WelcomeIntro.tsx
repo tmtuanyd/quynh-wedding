@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronUp } from "lucide-react";
 
 interface Props {
   onStart: () => void;
@@ -49,12 +49,13 @@ export default function WelcomeIntro({
           </button>
 
           <motion.div
-            className="mt-8 animate-bounce"
+            className="mt-8 animate-bounce flex flex-col items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            <ChevronDown />
+            <ChevronUp />
+            <span>Click</span>
           </motion.div>
         </motion.div>
       )}
