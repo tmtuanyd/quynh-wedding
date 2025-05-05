@@ -71,7 +71,7 @@ const Album = () => {
         <div className="grid grid-cols-3 gap-2">
           <motion.div
             className="grid grid-rows-2 gap-2"
-            variants={rightAnimation}
+            variants={leftAnimation}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -89,7 +89,7 @@ const Album = () => {
           </motion.div>
           <motion.div
             className="col-span-2 "
-            variants={leftAnimation}
+            variants={rightAnimation}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -98,60 +98,6 @@ const Album = () => {
               src={images[5]}
               alt="Photo 1"
               className="w-full  object-cover rounded-lg shadow-lg"
-            />
-          </motion.div>
-        </div>
-        {/* Third Row */}
-        <div className="grid grid-cols-12 gap-2">
-          <motion.div
-            className="grid grid-rows-3 col-span-7 gap-2 "
-            variants={leftAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <img
-              src={images[6]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={images[7]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={images[8]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </motion.div>
-          <motion.div
-            className="grid grid-rows-4 col-span-5 gap-2 "
-            variants={rightAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <img
-              src={images[9]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={images[10]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={images[11]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={images[12]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
             />
           </motion.div>
         </div>
