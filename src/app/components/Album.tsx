@@ -12,12 +12,12 @@ const images = [
 ];
 
 const leftAnimation = {
-  hidden: { x: "-100%", opacity: 0 },
+  hidden: { x: -100, opacity: 0 },
   visible: { x: 0, opacity: 1, transition: { duration: 1 } },
 };
 
 const rightAnimation = {
-  hidden: { x: "100%", opacity: 0 },
+  hidden: { x: 100, opacity: 0 },
   visible: { x: 0, opacity: 1, transition: { duration: 1 } },
 };
 
