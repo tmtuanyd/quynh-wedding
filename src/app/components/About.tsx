@@ -18,9 +18,7 @@ export default function About() {
         />
         <div className="mt-8">
           <div>
-            <p className="font-great text-[35px] lg:text-[45px] text-red-400">
-              Thiệp mời
-            </p>
+            <p className="font-great text-[35px] lg:text-[45px]">Thiệp mời</p>
             <p className="text-[15px] lg:text-[25px]">
               TRÂN TRỌNG KÍNH MỜI BẠN ĐẾN DỰ LỄ CƯỚI CỦA CHÚNG MÌNH
             </p>

@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import {
+  Style_Script,
   Great_Vibes,
   Clicker_Script,
   Lora,
@@ -13,6 +14,13 @@ const greatVibes = Great_Vibes({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-great-vibes",
+});
+
+const styleScript = Style_Script({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-style-script",
 });
 
 const clickerScript = Clicker_Script({
@@ -57,7 +65,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${playfairDisplay.className} ${greatVibes.className} ${clickerScript.className} ${heptaSlab.className}`}
+        className={`${styleScript.className} ${playfairDisplay.className} ${greatVibes.className} ${clickerScript.className} ${heptaSlab.className}`}
       >
         <main>{children}</main>
       </body>

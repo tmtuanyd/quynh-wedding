@@ -16,9 +16,9 @@ const BrideGroom = () => {
     <section className="relative text-black">
       <div className="flex flex-col gap- items-center">
         {/* Cô Dâu */}
-        <div className="relative flex flex-col lg:flex-row gap-4 items-center">
-          <div className="w-full lg:w-1/2 flex gap-2 relative items-center">
-            <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tr-[60px] lg:rounded-tr-[100px]">
+        <div className="relative flex flex-col  gap-4 items-center">
+          <div className="w-full  flex gap-2 relative items-center">
+            <div className="relative w-[55%] h-[300px] lg:h-[400px] overflow-hidden ">
               <Image
                 src="/images/gai/co dau.jpeg"
                 alt="Cô Dâu"
@@ -28,8 +28,8 @@ const BrideGroom = () => {
                 layout="responsive"
               />
             </div>
-            <div className="flex absolute left-[45%] top-[50%] gap-1">
-              <div className="w-15 h-20 lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
+            <div className="flex absolute left-[45%] top-[35%] gap-1 w-[60%]">
+              <div className="w-full  border border-white overflow-hidden">
                 <Image
                   src="/images/gai/co dau1.jpg"
                   alt="Chi tiết cô dâu 1"
@@ -39,7 +39,7 @@ const BrideGroom = () => {
                   layout="responsive"
                 />
               </div>
-              <div className="w-15 h-20 lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
+              {/* <div className="w-15 h-20 lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
                 <Image
                   src="/images/gai/co dau2.jpg"
                   alt="Chi tiết cô dâu 2"
@@ -48,17 +48,18 @@ const BrideGroom = () => {
                   height={153}
                   layout="responsive"
                 />
-              </div>
+              </div> */}
             </div>
 
-            <div className="mb-[80px] relative w-1/2">
-              <p className="text-[40px] font-great italic tracking-tighter text-[#B95C50]">
+            <div className="top-[-80px] relative w-1/2">
+              <p>Cô dâu</p>
+              <p className="text-[40px] font-style italic tracking-[2px] text-[#B95C50]">
                 Mai Huế
               </p>
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 overflow-hidden">
+          <div className="w-full overflow-hidden">
             <motion.p
               variants={brideTextVariant}
               initial="hidden"
@@ -76,9 +77,9 @@ const BrideGroom = () => {
         </div>
 
         {/* Chú Rể */}
-        <div className="relative flex flex-col lg:flex-row-reverse gap-4 items-center mt-4">
-          <div className="w-full lg:w-1/2 flex gap-4 relative flex-row-reverse items-center">
-            <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tl-[60px] lg:rounded-tl-[100px]">
+        <div className="relative flex flex-col  gap-4 items-center mt-4">
+          <div className="w-full  flex gap-4 relative flex-row-reverse items-center">
+            <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden">
               <Image
                 src="/images/trai/chu re.jpg"
                 alt="Chú Rể"
@@ -88,18 +89,15 @@ const BrideGroom = () => {
                 layout="responsive"
               />
             </div>
-            <div className="flex absolute right-[45%] top-[50%] gap-1">
-              <div className="w-15 h-20 lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
-                <Image
-                  src="/images/trai/chu re2.jpg"
+            <div className="flex absolute right-[45%] top-[45%] gap-1 w-[60%]">
+              <div className=" h-[100px] w-full lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
+                <img
+                  src="/images/trai/chu re1.jpg"
                   alt="Chi tiết chú rể 1"
                   className="object-cover w-full h-full"
-                  width={216}
-                  height={153}
-                  layout="responsive"
                 />
               </div>
-              <div className="w-15 h-20 lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
+              {/* <div className="w-15 h-20 lg:w-[100px] lg:h-[150px] border border-white overflow-hidden">
                 <Image
                   src="/images/trai/chu re1.jpg"
                   alt="Chi tiết chú rể 2"
@@ -108,11 +106,12 @@ const BrideGroom = () => {
                   height={153}
                   layout="responsive"
                 />
-              </div>
+              </div> */}
             </div>
 
             <div className="mb-[80px] relative">
-              <p className="text-[40px] font-great italic text-[#B95C50]">
+              <p className="text-right">Chú rể</p>
+              <p className="text-[40px] font-style italic tracking-[1px] text-[#B95C50]">
                 Thế Chiến
               </p>
             </div>
