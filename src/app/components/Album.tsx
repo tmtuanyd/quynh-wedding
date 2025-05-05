@@ -58,12 +58,12 @@ const Album = () => {
             <img
               src={images[1]}
               alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
+              className="w-full object-cover rounded-lg shadow-lg"
             />
             <img
               src={images[2]}
               alt="Photo 3"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
+              className="object-cover rounded-lg shadow-lg"
             />
           </motion.div>
         </div>
@@ -79,12 +79,12 @@ const Album = () => {
             <img
               src={images[3]}
               alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
+              className="w-full object-cover rounded-lg shadow-lg"
             />
             <img
               src={images[4]}
               alt="Photo 3"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
+              className="w-full object-cover rounded-lg shadow-lg"
             />
           </motion.div>
           <motion.div
@@ -97,7 +97,7 @@ const Album = () => {
             <img
               src={images[5]}
               alt="Photo 1"
-              className="w-full  object-cover rounded-lg shadow-lg"
+              className="w-full object-cover rounded-lg shadow-lg"
             />
           </motion.div>
         </div>
