@@ -54,7 +54,7 @@ export default function About() {
                 Giang
               </p>
               <p className="text-base lg:text-[22px] italic mt-6">
-                Rất hân hạnh được đón tiếp
+                Rất hân hạnh được đón tiếp!
               </p>
             </div>
           </div>
