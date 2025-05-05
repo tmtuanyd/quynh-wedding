@@ -20,7 +20,7 @@ const BrideGroom = () => {
           <div className="w-full lg:w-1/2 flex gap-2 relative items-center">
             <div className="relative w-[50%] h-[200px] lg:h-[400px] overflow-hidden rounded-tr-[60px] lg:rounded-tr-[100px]">
               <Image
-                src="/images/album/29.jpg"
+                src="/images/gai/co dau.jpeg"
                 alt="Cô Dâu"
                 className="object-cover w-full h-full"
                 width={216}
@@ -63,7 +63,7 @@ const BrideGroom = () => {
               variants={brideTextVariant}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               className="italic text-neutral-700"
             >
               Sự xuất hiện của anh trong cuộc đời em như một điều kì diệu. Anh
@@ -123,7 +123,7 @@ const BrideGroom = () => {
               variants={groomTextVariant}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               className="italic text-neutral-700"
             >
               Hạnh phúc nhất trên đời không phải là việc gặp được người tuyệt

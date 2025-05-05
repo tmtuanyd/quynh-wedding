@@ -50,12 +50,9 @@
 body {
   color: #b8b8b8;
   font-family: var(--font-playfair-display);
-  background: linear-gradient(
-    to bottom,
-    #fff8e1,
-    /* Vàng pastel nhạt */ #fce4ec,
-    /* Hồng pastel nhạt */ #e1f5fe /* Xanh pastel nhạt */
-  );
+  /* background: linear-gradient(to bottom, #fff8e1, #fce4ec, #e1f5fe),
+    url(/images/app-bg.jpg); */
+  background: url(/images/app-bg.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,7 +60,7 @@ body {
 }
 
 section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
 }
 
 /* Gradient background */

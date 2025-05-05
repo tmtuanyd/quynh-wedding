@@ -20,7 +20,7 @@ export default function EventDetails() {
   return (
     <div className="min-h-screen flex items-center justify-center lg:py-8">
       <motion.div
-        className="lg:timeline-bg backdrop-blur-md lg:rounded-lg px-4 py-8 lg:p-12 text-center text-black shadow-lg relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full"
+        className="lg:rounded-lg px-4 py-8 lg:p-12 text-center text-black relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -111,7 +111,7 @@ export default function EventDetails() {
             </div>
             <div className="flex-1 text-left">
               <p className="text-2xl lg:text-3xl font-semibold font-great">
-                11:30
+                11:00
               </p>
               <p className="text-base lg:text-xl uppercase">Chụp hình</p>
               <p className="text-base lg:text-xl uppercase">Photography</p>
