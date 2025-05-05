@@ -31,7 +31,7 @@ const Counter = () => {
   }, [weddingDate]);
 
   return (
-    <section className="w-full  flex flex-col items-center justify-center  text-black">
+    <section className="w-full  flex flex-col items-center justify-center  text-black bg-white">
       <p className="font-style text-4xl">Countdown</p>
       <div className="text-center font-medium text-xl">
         <p>

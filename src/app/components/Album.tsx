@@ -1,5 +1,5 @@
 import React from "react";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const images = [
   "/images/album/1.jpg",
@@ -11,19 +11,19 @@ const images = [
   "/images/album/7.jpg",
 ];
 
-// const leftAnimation = {
-//   hidden: { x: -100, opacity: 0 },
-//   visible: { x: 0, opacity: 1, transition: { duration: 1 } },
-// };
+const leftAnimation = {
+  hidden: { x: -100, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+};
 
-// const rightAnimation = {
-//   hidden: { x: 100, opacity: 0 },
-//   visible: { x: 0, opacity: 1, transition: { duration: 1 } },
-// };
+const rightAnimation = {
+  hidden: { x: 100, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+};
 
 const Album = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto mt-[-26px]">
+    <div className="w-full max-w-6xl mx-auto  overflow-x-hidden">
       <div className="w-[100px] h-[100px] mx-auto">
         <img src="/images/heart.png" />
       </div>
@@ -101,11 +101,11 @@ const Album = () => {
         </div> */}
         {/* Third Row */}
         <div className="grid grid-cols-12 gap-2">
-          <div
+          <motion.div
             className="grid grid-rows-3 col-span-7 gap-2"
-            // variants={leftAnimation}
-            // initial="hidden"
-            // whileInView="visible"
+            variants={leftAnimation}
+            initial="hidden"
+            whileInView="visible"
           >
             <div className="overflow-hidden ">
               <img
@@ -128,12 +128,12 @@ const Album = () => {
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
             className="grid grid-rows-4 col-span-5 gap-2"
-            // variants={rightAnimation}
-            // initial="hidden"
-            // whileInView="visible"
+            variants={rightAnimation}
+            initial="hidden"
+            whileInView="visible"
           >
             <div className="overflow-hidden ">
               <img
@@ -163,7 +163,7 @@ const Album = () => {
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
