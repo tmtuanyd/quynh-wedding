@@ -106,7 +106,6 @@ const Album = () => {
             variants={leftAnimation}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
           >
             <div className="overflow-hidden ">
               <img
@@ -135,7 +134,6 @@ const Album = () => {
             variants={rightAnimation}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
           >
             <div className="overflow-hidden ">
               <img
