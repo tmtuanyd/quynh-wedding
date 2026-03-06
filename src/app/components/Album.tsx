@@ -110,7 +110,7 @@ const Album = () => {
             {batchImages.map((src, i) => (
               <motion.div
                 key={`${batchIndex}-${i}-${src}`}
-                className="aspect-square overflow-hidden rounded-xl sm:rounded-2xl shadow-xl ring-1 ring-white/30 bg-white/10 backdrop-blur-sm"
+                className="aspect-[2/3] overflow-hidden rounded-xl sm:rounded-2xl shadow-xl ring-1 ring-white/30 bg-white/10 backdrop-blur-sm"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
@@ -119,7 +119,7 @@ const Album = () => {
                   src={src}
                   alt={`Ảnh cưới ${batchIndex * PHOTOS_PER_VIEW + i + 1}`}
                   width={480}
-                  height={480}
+                  height={720}
                   sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 280px"
                   className="h-full w-full object-cover object-top"
                 />

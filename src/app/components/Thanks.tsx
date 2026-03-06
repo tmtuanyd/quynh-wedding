@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const Thanks = () => {
   return (
@@ -32,22 +31,6 @@ const Thanks = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.65, ease: "easeOut" }}
       >
-        <motion.div
-          className="mx-auto mb-4 w-24 sm:w-28"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <Image
-            src="/images/flower-footer.svg"
-            alt=""
-            width={140}
-            height={42}
-            className="h-auto w-full opacity-95"
-          />
-        </motion.div>
-
         <motion.p
           className="font-great text-4xl sm:text-5xl lg:text-6xl text-white"
           initial={{ opacity: 0, y: 16 }}
