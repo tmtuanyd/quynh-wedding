@@ -24,7 +24,9 @@ const Thanks = () => {
 
       <motion.div
         className="relative z-10 w-full max-w-3xl px-6 py-10 text-center text-white sm:px-10 sm:py-12"
-        style={{ textShadow: "0 1px 0 rgba(0,0,0,0.18), 0 2px 12px rgba(0,0,0,0.25)" }}
+        style={{
+          textShadow: "0 1px 0 rgba(0,0,0,0.18), 0 2px 12px rgba(0,0,0,0.25)",
+        }}
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -73,8 +75,8 @@ const Thanks = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.42 }}
         >
-          Sự hiện diện và lời chúc của bạn là món quà ý nghĩa nhất trong ngày đặc
-          biệt của Tạ Như Quỳnh &amp; Chang Shu Yu.
+          Sự hiện diện và lời chúc của bạn là món quà ý nghĩa nhất trong ngày
+          đặc biệt của Tạ Như Quỳnh &amp; Chang Shu Yu.
         </motion.p>
 
         <motion.div
@@ -84,7 +86,6 @@ const Thanks = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         />
-
       </motion.div>
     </motion.section>
   );

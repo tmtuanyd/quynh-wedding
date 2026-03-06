@@ -38,12 +38,24 @@
 }
 
 /* Utility theme */
-.text-wedding { color: var(--wedding-text); }
-.text-wedding-secondary { color: var(--wedding-text-secondary); }
-.text-wedding-accent { color: var(--wedding-accent); }
-.bg-wedding { background-color: var(--wedding-bg); }
-.bg-wedding-alt { background-color: var(--wedding-bg-alt); }
-.border-wedding { border-color: var(--wedding-border); }
+.text-wedding {
+  color: var(--wedding-text);
+}
+.text-wedding-secondary {
+  color: var(--wedding-text-secondary);
+}
+.text-wedding-accent {
+  color: var(--wedding-accent);
+}
+.bg-wedding {
+  background-color: var(--wedding-bg);
+}
+.bg-wedding-alt {
+  background-color: var(--wedding-bg-alt);
+}
+.border-wedding {
+  border-color: var(--wedding-border);
+}
 
 .font-style {
   font-family: var(--font-style-script);
@@ -80,7 +92,12 @@ html {
 body {
   color: var(--wedding-text);
   font-family: var(--font-playfair-display);
-  background: linear-gradient(to bottom, var(--wedding-bg) 0%, var(--wedding-bg-alt) 50%, #f5eeee 100%);
+  background: linear-gradient(
+    to bottom,
+    var(--wedding-bg) 0%,
+    var(--wedding-bg-alt) 50%,
+    #f5eeee 100%
+  );
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -118,8 +135,12 @@ section:not(#hero) {
 
 /* Giảm chuyển động nếu user bật prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -133,7 +154,8 @@ section:not(#hero) {
 
 /* Hero — lớp phủ sáng để chữ dễ đọc, blend sang theme */
 .hero-bg {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       to top,
       var(--wedding-bg) 0%,
       rgba(253, 248, 248, 0.98) 5%,
@@ -145,11 +167,14 @@ section:not(#hero) {
   background-attachment: fixed;
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: 100% 100%, cover;
+  background-size:
+    100% 100%,
+    cover;
 }
 
 .thank-bg {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(255, 250, 250, 0.03) 0%,
       rgba(110, 78, 78, 0.18) 52%,
@@ -162,11 +187,8 @@ section:not(#hero) {
 }
 
 .damngo-bg {
-  background: linear-gradient(
-      to top,
-      rgba(80, 80, 80, 1),
-      rgba(240, 240, 240, 0.3)
-    ),
+  background:
+    linear-gradient(to top, rgba(80, 80, 80, 1), rgba(240, 240, 240, 0.3)),
     url(/images/damngo2.jpg);
   background-attachment: fixed;
   background-position: center;
@@ -175,11 +197,8 @@ section:not(#hero) {
 }
 
 .event-bg {
-  background: linear-gradient(
-      to top,
-      rgba(80, 80, 80, 1),
-      rgba(240, 240, 240, 0.02)
-    ),
+  background:
+    linear-gradient(to top, rgba(80, 80, 80, 1), rgba(240, 240, 240, 0.02)),
     url(/images/event-bg.png);
   background-attachment: fixed;
   background-position: center 42%;
@@ -250,7 +269,8 @@ section:not(#hero) {
 }
 
 .wedding-gradient {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.9),
       rgba(245, 245, 245, 0.8)
@@ -265,7 +285,9 @@ section:not(#hero) {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 3rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
