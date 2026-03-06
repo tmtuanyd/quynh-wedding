@@ -13,14 +13,14 @@ const BrideGroom = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 1 } },
   };
   return (
-    <section className="relative text-black lg:hidden">
+    <section className="relative text-wedding bg-wedding py-12 px-4 lg:hidden">
       <div>
-        <p className="font-great text-[25px] text-center ">
+        <p className="font-great text-[25px] text-center text-wedding-secondary">
           Nhân danh tình yêu,hãy cùng đi hết quãng đời còn lại . Từ nay trở
           đi,đông có năng ấm còn mình có nhau !
         </p>
       </div>
-      <div className="flex flex-col gap- items-center">
+      <div className="flex flex-col gap-4 items-center">
         {/* Cô Dâu */}
         <div className="relative flex flex-col  gap-4 items-center mt-4">
           <div className="w-full  flex gap-2 relative items-center">
@@ -59,8 +59,8 @@ const BrideGroom = () => {
 
             <div className="top-[-80px] relative w-1/2">
               <p>Cô dâu</p>
-              <p className="text-[40px] font-style italic tracking-[2px] text-[#B95C50]">
-                Mai Huế
+              <p className="text-[40px] font-style italic tracking-[2px] text-wedding-accent">
+                Tạ Như Quỳnh
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ const BrideGroom = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
-              className="italic text-neutral-700"
+              className="italic text-wedding-secondary"
             >
               Sự xuất hiện của anh trong cuộc đời em như một điều kì diệu. Anh
               như ánh nắng sưởi ấm thế giới của em, từ ngày hôm nay dưới ánh
@@ -117,8 +117,8 @@ const BrideGroom = () => {
 
             <div className="mb-[80px] relative">
               <p className="text-right">Chú rể</p>
-              <p className="text-[40px] font-style italic tracking-[1px] text-[#B95C50]">
-                Thế Chiến
+              <p className="text-[40px] font-style italic tracking-[1px] text-wedding-accent">
+                Chang Shu Yu
               </p>
             </div>
           </div>
@@ -129,7 +129,7 @@ const BrideGroom = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
-              className="italic text-neutral-700"
+              className="italic text-wedding-secondary"
             >
               Hạnh phúc nhất trên đời không phải là việc gặp được người tuyệt
               vời nhất ở những tháng ngày đẹp nhất. Mà là gặp một người từ từ

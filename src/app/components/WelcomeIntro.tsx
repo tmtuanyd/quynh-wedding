@@ -56,7 +56,7 @@ export default function WelcomeIntro({
               </motion.div>
 
               <motion.p
-                className="text-[#5c4040] text-2xl sm:text-5xl md:text-6xl font-great font-extralight tracking-[0.02em] leading-tight"
+                className="text-wedding text-2xl sm:text-5xl md:text-6xl font-great font-extralight tracking-[0.02em] leading-tight"
                 style={{ textShadow: "0 1px 2px rgba(255,255,255,0.8)" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -73,7 +73,7 @@ export default function WelcomeIntro({
                 &amp;
               </motion.span>
               <motion.p
-                className="text-[#5c4040] text-2xl sm:text-5xl md:text-6xl font-great font-extralight tracking-[0.02em] leading-tight"
+                className="text-wedding text-2xl sm:text-5xl md:text-6xl font-great font-extralight tracking-[0.02em] leading-tight"
                 style={{ textShadow: "0 1px 2px rgba(255,255,255,0.8)" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -90,7 +90,7 @@ export default function WelcomeIntro({
                 transition={{ delay: 0.9, duration: 0.6 }}
               >
                 <span className="h-px flex-1 max-w-[48px] sm:max-w-[72px] bg-gradient-to-r from-transparent to-[#c99a9a]/50" />
-                <span className="text-[#6b4a4a] text-xs sm:text-base tracking-[0.2em] sm:tracking-[0.35em] uppercase [font-family:var(--font-playfair-display)] font-light">
+                <span className="text-wedding-secondary text-xs sm:text-base tracking-[0.2em] sm:tracking-[0.35em] uppercase [font-family:var(--font-playfair-display)] font-light">
                   05 · 04 · 2026
                 </span>
                 <span className="h-px flex-1 max-w-[48px] sm:max-w-[72px] bg-gradient-to-l from-transparent to-[#c99a9a]/50" />
@@ -108,7 +108,7 @@ export default function WelcomeIntro({
               {/* Nút — mobile: nhỏ gọn */}
               <motion.button
                 onClick={handleStart}
-                className="group relative px-8 py-2.5 sm:px-12 sm:py-4 rounded-full text-sm sm:text-[15px] font-medium text-[#5c4040] overflow-hidden tracking-[0.1em] sm:tracking-[0.12em] transition-all duration-300"
+                className="group relative px-8 py-2.5 sm:px-12 sm:py-4 rounded-full text-sm sm:text-[15px] font-medium text-wedding overflow-hidden tracking-[0.1em] sm:tracking-[0.12em] transition-all duration-300"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.15, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
@@ -142,7 +142,7 @@ export default function WelcomeIntro({
             aria-label="Mở thiệp mời"
           >
             <span
-              className="text-[11px] sm:text-xs tracking-[0.4em] font-medium text-[#6b4a4a] [font-family:var(--font-playfair-display)] select-none"
+              className="text-[11px] sm:text-xs tracking-[0.4em] font-medium text-wedding-secondary [font-family:var(--font-playfair-display)] select-none"
               style={{ textShadow: "0 1px 2px rgba(255,255,255,0.8)" }}
             >
               MỞ THIỆP

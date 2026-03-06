@@ -20,14 +20,14 @@ export default function EventDetails() {
   return (
     <div className="min-h-screen flex items-center justify-center lg:py-8">
       <motion.div
-        className="lg:rounded-lg px-4 pt-8 lg:px-12 lg:pt-12 text-center text-black relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full"
+        className="lg:rounded-lg px-4 pt-8 lg:px-12 lg:pt-12 text-center text-wedding relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full bg-wedding/50"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
       >
         {/* Title */}
-        <h2 className="text-4xl font-great mb-8">Timeline</h2>
+        <h2 className="text-4xl font-great mb-8 text-wedding-accent">Timeline</h2>
 
         {/* Timeline */}
         <div className="flex flex-col gap-12">
@@ -52,11 +52,11 @@ export default function EventDetails() {
                 className="filter invert"
               />
             </div>
-            <div className="flex-1 h-[1px] bg-black/50"></div>
+            <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
           </div>
           {/* Welcome Guests */}
           <div className="flex items-center gap-4">
-            <div className="flex-1 h-[1px] bg-black/50"></div>
+            <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
             <div className="w-[40px] flex-shrink-0">
               <Image
                 src="/images/cheer.svg"
@@ -94,11 +94,11 @@ export default function EventDetails() {
                 className="filter invert"
               />
             </div>
-            <div className="flex-1 h-[1px] bg-black/50"></div>
+            <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
           </div>
           {/* Dinner */}
           <div className="flex items-center gap-4">
-            <div className="flex-1 h-[1px] bg-black/50"></div>
+            <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
             <div className="w-[40px]  flex-shrink-0">
               <Image
                 src="/images/camera.svg"
@@ -124,7 +124,7 @@ export default function EventDetails() {
               đình chúng mình!
             </p>
             <p className="text-base lg:text-lg mt-6 font-great">
-              Huế & Chiến with Love
+              Quỳnh & Shu Yu with Love
             </p>
           </div>
         </div>

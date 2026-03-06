@@ -14,9 +14,9 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="bg-pink-50 py-16 px-4">
+    <section className="bg-wedding py-16 px-4">
       <motion.h2
-        className="text-3xl font-cursive text-pink-700 text-center mb-10"
+        className="text-3xl font-great text-wedding-accent text-center mb-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

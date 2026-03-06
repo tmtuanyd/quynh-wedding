@@ -24,9 +24,9 @@ export default function RSVPForm() {
   };
 
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-wedding py-16 px-4">
       <motion.h2
-        className="text-3xl text-pink-700 font-cursive text-center mb-8"
+        className="text-3xl font-great text-wedding-accent text-center mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -36,7 +36,7 @@ export default function RSVPForm() {
       <div className="max-w-md mx-auto">
         {submitted ? (
           <motion.div
-            className="text-center text-green-600 text-lg font-semibold"
+            className="text-center text-wedding-accent text-lg font-semibold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -52,7 +52,7 @@ export default function RSVPForm() {
               required
               value={form.name}
               onChange={handleChange}
-              className="w-full border border-pink-300 rounded px-4 py-2 focus:outline-pink-400"
+              className="w-full border border-wedding rounded-lg px-4 py-2.5 text-wedding focus:outline-none focus:ring-2 focus:ring-[var(--wedding-accent)] focus:border-transparent"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -65,7 +65,7 @@ export default function RSVPForm() {
               required
               value={form.guests}
               onChange={handleChange}
-              className="w-full border border-pink-300 rounded px-4 py-2"
+              className="w-full border border-wedding rounded-lg px-4 py-2.5 text-wedding focus:outline-none focus:ring-2 focus:ring-[var(--wedding-accent)] focus:border-transparent"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -76,14 +76,14 @@ export default function RSVPForm() {
               rows={4}
               value={form.message}
               onChange={handleChange}
-              className="w-full border border-pink-300 rounded px-4 py-2"
+              className="w-full border border-wedding rounded-lg px-4 py-2.5 text-wedding focus:outline-none focus:ring-2 focus:ring-[var(--wedding-accent)] focus:border-transparent"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             />
             <motion.button
               type="submit"
-              className="w-full bg-pink-600 text-white py-2 rounded mt-4"
+              className="w-full bg-[var(--wedding-accent)] text-white py-3 rounded-lg mt-4 font-medium hover:opacity-90 transition-opacity"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}

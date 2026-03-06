@@ -10,8 +10,11 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center text-white hero-bg relative"
     >
-      {/* Nội dung chính */}
-      <div className="text-center space-y-4 mt-[100px]">
+      {/* Nội dung chính — bóng chữ để đọc rõ trên mọi nền */}
+      <div
+        className="text-center space-y-4 mt-[100px]"
+        style={{ textShadow: "0 2px 4px rgba(0,0,0,0.4), 0 0 24px rgba(0,0,0,0.25)" }}
+      >
         <h1 className="text-4xl lg:text-6xl font-great">
           We Are Getting Married!
         </h1>
@@ -21,7 +24,7 @@ export default function Hero() {
       </div>
 
       {/* Lịch */}
-      <div className="mt-12 text-center ">
+      <div className="mt-12 text-center" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.35), 0 0 16px rgba(0,0,0,0.2)" }}>
         <p className="text-base lg:text-xl font-bold">THÁNG 4 2026</p>
         <div className="grid grid-cols-7 gap-2 text-sm lg:text-base mt-4">
           {/* Hiển thị các ngày trong tuần */}
@@ -73,18 +76,18 @@ export default function Hero() {
               ) : (
                 <span
                   key={day}
-                  className="w-full aspect-square flex items-center justify-center"
+                  className="w-full aspect-square flex items-center justify-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]"
                 >
                   {day}
                 </span>
               );
             })}
         </div>
-        <div className="mt-[40px]">
-          <p className="uppercase text-wxl text-center">
+        <div className="mt-[40px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.2)" }}>
+          <p className="uppercase text-wxl text-center tracking-wider">
             Quyết định bên nhau trọn đời
           </p>
-          <p className="font-great text-2xl text-center">Save the date</p>
+          <p className="font-great text-2xl text-center mt-1">Save the date</p>
         </div>
       </div>
     </section>

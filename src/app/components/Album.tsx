@@ -23,11 +23,11 @@ const rightAnimation = {
 
 const Album = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto  overflow-x-hidden">
+    <div className="w-full max-w-6xl mx-auto overflow-x-hidden py-12 px-4 bg-wedding">
       <div className="w-[100px] h-[100px] mx-auto">
-        <img src="/images/heart.png" />
+        <img src="/images/heart.png" alt="" />
       </div>
-      <h2 className="text-center text-black text-4xl font-great mb-8">
+      <h2 className="text-center text-wedding-accent text-4xl font-great mb-8">
         Wedding Album
       </h2>
       <div className="flex flex-col gap-2">

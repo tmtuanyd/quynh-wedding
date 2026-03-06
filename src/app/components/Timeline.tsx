@@ -28,9 +28,9 @@ export default function Timeline() {
   ];
 
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-wedding py-16 px-4">
       <motion.h2
-        className="text-3xl text-pink-700 font-cursive text-center mb-10"
+        className="text-3xl font-great text-wedding-accent text-center mb-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -47,15 +47,15 @@ export default function Timeline() {
             transition={{ duration: 1, delay: index * 0.5 }}
           >
             <div className="w-24 text-right">
-              <div className="text-xl font-bold text-pink-600">
+              <div className="text-xl font-bold text-wedding-accent">
                 {event.time}
               </div>
             </div>
-            <div className="border-l-2 border-pink-300 pl-4">
-              <h3 className="text-lg font-semibold text-pink-800">
+            <div className="border-l-2 border-wedding pl-4" style={{ borderColor: "var(--wedding-accent-light)" }}>
+              <h3 className="text-lg font-semibold text-wedding">
                 {event.title}
               </h3>
-              <p className="text-sm text-gray-600">{event.description}</p>
+              <p className="text-sm text-wedding-secondary">{event.description}</p>
             </div>
           </motion.div>
         ))}

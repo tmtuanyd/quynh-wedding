@@ -31,14 +31,14 @@ const Counter = () => {
   }, [weddingDate]);
 
   return (
-    <section className="w-full  flex flex-col items-center justify-center  text-black bg-white">
-      <p className="font-style text-4xl">Countdown</p>
-      <div className="text-center font-medium text-xl">
+    <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-wedding text-wedding">
+      <p className="font-great text-3xl sm:text-4xl text-wedding-accent">Countdown</p>
+      <div className="text-center font-medium text-lg sm:text-xl text-wedding-secondary mt-4">
         <p>
           {timeLeft.days} ngày {timeLeft.hours} giờ {timeLeft.minutes} phút{" "}
           {timeLeft.seconds} giây
         </p>
-        <p className="font-great mt-4">Until the Wedding Day!</p>
+        <p className="font-great mt-4 text-wedding">Until the Wedding Day!</p>
       </div>
     </section>
   );
