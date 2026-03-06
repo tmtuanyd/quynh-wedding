@@ -8,11 +8,11 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-white hero-bg relative"
+      className="min-h-screen flex flex-col items-center justify-end text-white hero-bg relative pb-6 lg:pb-8"
     >
-      {/* Nội dung chính — bóng chữ để đọc rõ trên mọi nền */}
+      {/* Nội dung chính — đặt sát đáy để thấy rõ ảnh cô dâu chú rể */}
       <div
-        className="text-center space-y-4 mt-[100px]"
+        className="text-center space-y-2"
         style={{ textShadow: "0 2px 4px rgba(0,0,0,0.4), 0 0 24px rgba(0,0,0,0.25)" }}
       >
         <h1 className="text-4xl lg:text-6xl font-great">
@@ -24,9 +24,9 @@ export default function Hero() {
       </div>
 
       {/* Lịch */}
-      <div className="mt-12 text-center" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.35), 0 0 16px rgba(0,0,0,0.2)" }}>
+      <div className="mt-4 text-center" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.35), 0 0 16px rgba(0,0,0,0.2)" }}>
         <p className="text-base lg:text-xl font-bold">THÁNG 4 2026</p>
-        <div className="grid grid-cols-7 gap-2 text-sm lg:text-base mt-4">
+        <div className="grid grid-cols-7 gap-1.5 text-sm lg:text-base mt-2">
           {/* Hiển thị các ngày trong tuần */}
           {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map((day) => (
             <span key={day} className="font-semibold text-center">
@@ -83,7 +83,7 @@ export default function Hero() {
               );
             })}
         </div>
-        <div className="mt-[40px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.2)" }}>
+        <div className="mt-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.2)" }}>
           <p className="uppercase text-wxl text-center tracking-wider">
             Quyết định bên nhau trọn đời
           </p>
