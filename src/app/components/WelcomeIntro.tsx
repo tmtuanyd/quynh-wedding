@@ -39,11 +39,11 @@ export default function WelcomeIntro({
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Không dùng backdrop-blur để ảnh nền không bị mờ; dùng nền tối nhẹ cho chữ rõ */}
-            <div className="rounded-2xl sm:rounded-2xl bg-black/50 border border-white/20 shadow-2xl px-6 py-8 sm:px-10 sm:py-12">
-              {/* Decorative top line */}
+            {/* Nền tối ấm (không blur) — tone thiệp cưới, chữ rõ */}
+            <div className="rounded-2xl bg-[rgba(45,35,30,0.75)] border border-white/25 shadow-2xl shadow-black/30 px-6 py-8 sm:px-10 sm:py-12">
+              {/* Đường trang trí vàng đồng */}
               <motion.div
-                className="mx-auto mb-6 h-px w-16 bg-gradient-to-r from-transparent via-white/60 to-transparent"
+                className="mx-auto mb-6 h-px w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
@@ -58,7 +58,7 @@ export default function WelcomeIntro({
                 Tạ Như Quỳnh
               </motion.p>
               <motion.span
-                className="inline-block font-clicker text-3xl sm:text-4xl text-[#f5e6d3] my-2"
+                className="inline-block font-clicker text-3xl sm:text-4xl text-[#e8d5b7] my-2"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.65, duration: 0.5 }}
@@ -81,15 +81,15 @@ export default function WelcomeIntro({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.85, duration: 0.6 }}
               >
-                <span className="h-px flex-1 max-w-[60px] bg-white/40" />
-                <span className="text-white/95 text-sm sm:text-base tracking-[0.3em] uppercase [font-family:var(--font-playfair-display)]">
+                <span className="h-px flex-1 max-w-[60px] bg-white/50" />
+                <span className="text-[#f5efe6] text-sm sm:text-base tracking-[0.3em] uppercase [font-family:var(--font-playfair-display)]">
                   18 · 05 · 2025
                 </span>
-                <span className="h-px flex-1 max-w-[60px] bg-white/40" />
+                <span className="h-px flex-1 max-w-[60px] bg-white/50" />
               </motion.div>
 
               <motion.p
-                className="text-white/80 text-sm font-light tracking-widest uppercase mb-8"
+                className="text-[#e8d5b7]/95 text-sm font-light tracking-widest uppercase mb-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
@@ -103,10 +103,10 @@ export default function WelcomeIntro({
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.1, duration: 0.5 }}
-                whileHover={{ boxShadow: "0 0 32px rgba(245, 230, 211, 0.4)" }}
+                whileHover={{ boxShadow: "0 0 28px rgba(212, 175, 55, 0.35)" }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-[#f5e6d3] via-[#faf5ef] to-[#f5e6d3]" />
+                <span className="absolute inset-0 bg-gradient-to-r from-[#f0e6d8] via-[#faf5ef] to-[#f0e6d8]" />
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative flex items-center gap-2">
                   Wedding Invitation
@@ -118,7 +118,7 @@ export default function WelcomeIntro({
 
           {/* Scroll hint - dưới card trên mobile */}
           <motion.div
-            className="absolute bottom-3 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/80"
+            className="absolute bottom-3 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#e8d5b7]/90"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.5 }}
