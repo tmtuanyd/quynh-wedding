@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -14,10 +15,25 @@ export default function WelcomeIntro({
   showIntro,
   setShowIntro,
 }: Props) {
-  const handleStart = () => {
+  const hasOpenedRef = useRef(false);
+
+  const handleStart = useCallback(() => {
+    if (hasOpenedRef.current) return;
+    hasOpenedRef.current = true;
     onStart();
     setShowIntro(false);
-  };
+  }, [onStart, setShowIntro]);
+
+  useEffect(() => {
+    if (!showIntro) return;
+
+    hasOpenedRef.current = false;
+    const autoOpenId = setTimeout(() => {
+      handleStart();
+    }, 15000);
+
+    return () => clearTimeout(autoOpenId);
+  }, [showIntro, handleStart]);
 
   return (
     <AnimatePresence>
@@ -35,14 +51,14 @@ export default function WelcomeIntro({
 
           {/* Nội dung chính — mobile: khối nhỏ gọn dưới đáy để ảnh lộ rõ */}
           <motion.div
-            className="relative z-10 w-full max-w-lg px-4 py-4 sm:px-10 sm:py-14 mx-3 sm:mx-4 mb-28 sm:mb-0 text-center pb-safe"
+            className="relative z-10 w-full max-w-lg px-4 py-3 sm:px-10 sm:py-10 mx-3 sm:mx-4 mb-28 sm:mb-0 text-center pb-safe"
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Khối thiệp — mobile: padding & khoảng cách nhỏ để chiếm ít chiều cao */}
-            <div className="relative rounded-2xl bg-[linear-gradient(180deg,rgba(255,252,250,0.95)_0%,rgba(255,245,248,0.92)_100%)] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(255,255,255,0.8)_inset] px-5 py-5 sm:px-12 sm:py-14 welcome-intro-card">
+            <div className="relative rounded-2xl bg-[linear-gradient(180deg,rgba(255,252,250,0.68)_0%,rgba(255,245,248,0.56)_100%)] backdrop-blur-[2px] shadow-[0_14px_38px_-14px_rgba(0,0,0,0.14),0_0_0_1px_rgba(255,255,255,0.62)_inset] px-5 py-4 sm:px-12 sm:py-10 welcome-intro-card">
               <div className="absolute inset-0 rounded-2xl pointer-events-none welcome-intro-border" aria-hidden />
               {/* Đường trang trí — mobile: nhỏ gọn */}
               <motion.div
@@ -97,35 +113,13 @@ export default function WelcomeIntro({
               </motion.div>
 
               <motion.p
-                className="text-[#b87070] text-[10px] sm:text-sm font-light tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-4 sm:mb-10 [font-family:var(--font-playfair-display)]"
+                className="text-[#b87070] text-[10px] sm:text-sm font-light tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-1 sm:mb-2 [font-family:var(--font-playfair-display)]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
               >
                 Trân trọng kính mời
               </motion.p>
-
-              {/* Nút — mobile: nhỏ gọn */}
-              <motion.button
-                onClick={handleStart}
-                className="group relative px-8 py-2.5 sm:px-12 sm:py-4 rounded-full text-sm sm:text-[15px] font-medium text-wedding overflow-hidden tracking-[0.1em] sm:tracking-[0.12em] transition-all duration-300"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.15, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{
-                  boxShadow: "0 0 0 1px rgba(184,112,112,0.4), 0 12px 28px -8px rgba(247,200,210,0.4)",
-                  scale: 1.02,
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="absolute inset-0 bg-gradient-to-b from-[#fdf5f7] via-[#f8e8ec] to-[#f0dce2]" />
-                <span className="absolute inset-0 rounded-full border border-[#e0b8b8]/60 group-hover:border-[#d4a5a5] transition-colors duration-300" />
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative flex items-center justify-center gap-2">
-                  Wedding Invitation
-                  <span className="text-base opacity-80" aria-hidden>💍</span>
-                </span>
-              </motion.button>
             </div>
           </motion.div>
 

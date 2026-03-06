@@ -32,13 +32,47 @@ const ALBUM2_FILES = [
   "Copy of DSC08591_1 Large.jpeg",
 ];
 
-const ALBUM2_IMAGES = ALBUM2_FILES.map(
-  (name) => `/images/album2/${encodeURIComponent(name)}`
-);
+const ALBUM3_FILES = [
+  "DSC01676 Medium.jpeg",
+  "DSC01694 Medium.jpeg",
+  "DSC01725 Medium.jpeg",
+  "DSC01743 Medium.jpeg",
+  "DSC01778 Medium.jpeg",
+  "DSC01806 Medium.jpeg",
+  "DSC01832 Medium.jpeg",
+  "DSC01876 Medium.jpeg",
+  "DSC01930 Medium.jpeg",
+  "DSC01941 Medium.jpeg",
+  "DSC01960 Medium.jpeg",
+  "DSC01980 Medium.jpeg",
+  "DSC02045 Medium.jpeg",
+  "DSC02135 Medium.jpeg",
+  "DSC02153 Medium.jpeg",
+  "DSC02203 Medium.jpeg",
+  "DSC02240 Medium.jpeg",
+  "DSC02253 Medium.jpeg",
+  "DSC02276 Medium.jpeg",
+  "DSC02348 Medium.jpeg",
+  "DSC02411 Medium.jpeg",
+  "DSC02435 Medium.jpeg",
+  "DSC02472 Medium.jpeg",
+  "DSC02529 Medium.jpeg",
+  "DSC02550 Medium.jpeg",
+  "DSC02582 Medium.jpeg",
+  "DSC02617 Medium.jpeg",
+  "DSC02637 Medium.jpeg",
+  "DSC02647 Medium.jpeg",
+  "DSC02680 Medium.jpeg",
+];
+
+const ALBUM_IMAGES = [
+  ...ALBUM2_FILES.map((name) => `/images/album2/${encodeURIComponent(name)}`),
+  ...ALBUM3_FILES.map((name) => `/images/album3/${encodeURIComponent(name)}`),
+];
 
 const PHOTOS_PER_VIEW = 6;
 const ROTATE_INTERVAL_MS = 8000; // 8 giây đổi một lần
-const TOTAL_IMAGES = ALBUM2_IMAGES.length;
+const TOTAL_IMAGES = ALBUM_IMAGES.length;
 const BATCH_COUNT = Math.ceil(TOTAL_IMAGES / PHOTOS_PER_VIEW);
 
 /** Luôn trả về đủ PHOTOS_PER_VIEW ảnh; nếu thiếu thì lặp lại từ đầu để không bị lẻ. */
@@ -46,14 +80,14 @@ function getBatchImages(batchIndex: number) {
   const start = (batchIndex % BATCH_COUNT) * PHOTOS_PER_VIEW;
   const result: string[] = [];
   for (let i = 0; i < PHOTOS_PER_VIEW; i++) {
-    result.push(ALBUM2_IMAGES[(start + i) % TOTAL_IMAGES]);
+    result.push(ALBUM_IMAGES[(start + i) % TOTAL_IMAGES]);
   }
   return result;
 }
 
 function getBackgroundImage(batchIndex: number) {
   const start = (batchIndex % BATCH_COUNT) * PHOTOS_PER_VIEW;
-  return ALBUM2_IMAGES[start % TOTAL_IMAGES];
+  return ALBUM_IMAGES[start % TOTAL_IMAGES];
 }
 
 const Album = () => {
