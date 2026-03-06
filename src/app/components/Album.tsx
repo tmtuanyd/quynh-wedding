@@ -5,8 +5,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const ALBUM_FINAL_FILES = [
-  "Copy of DSC08318_1 Large.jpeg",
-  "Copy of DSC08331_1 Large.jpeg",
   "DSC01694 Medium.jpeg",
   "DSC01930 Medium.jpeg",
   "DSC02045 Medium.jpeg",
@@ -16,6 +14,8 @@ const ALBUM_FINAL_FILES = [
   "DSC02550 Medium.jpeg",
   "DSC02582 Medium.jpeg",
   "DSC02637 Medium.jpeg",
+  "Copy of DSC08318_1 Large.jpeg",
+  "Copy of DSC08331_1 Large.jpeg",
 ];
 
 const ALBUM_IMAGES = ALBUM_FINAL_FILES.map(
