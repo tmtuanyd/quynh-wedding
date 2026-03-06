@@ -18,16 +18,17 @@ export default function EventDetails() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center lg:py-8">
+    <section className="min-h-screen w-full flex items-center justify-center py-16 sm:py-20 lg:py-24 px-4">
       <motion.div
-        className="lg:rounded-lg px-4 pt-8 lg:px-12 lg:pt-12 text-center text-wedding relative w-full min-h-screen lg:w-[600px] lg:min-h-auto max-w-full bg-wedding/50"
+        className="lg:rounded-2xl px-6 py-10 sm:px-10 lg:px-14 lg:py-14 text-center text-wedding relative w-full max-w-[600px] mx-auto bg-[var(--wedding-card)] border border-[var(--wedding-border)] shadow-[0_8px_32px_rgba(61,46,46,0.06)]"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        {/* Title */}
-        <h2 className="text-4xl font-great mb-8 text-wedding-accent">Timeline</h2>
+        <div className="mx-auto mb-8 h-px w-12 bg-[var(--wedding-accent-light)]" />
+        <h2 className="text-3xl sm:text-4xl font-great text-wedding-accent">Timeline</h2>
+        <p className="text-sm text-wedding-secondary/80 mt-2 uppercase tracking-widest [font-family:var(--font-playfair-display)]">05 · 04 · 2026</p>
 
         {/* Timeline */}
         <div className="flex flex-col gap-12">
@@ -42,14 +43,14 @@ export default function EventDetails() {
                 Welcome guests
               </p>
             </div>
-            <div className="w-[30px] flex-shrink-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center">
               <Image
                 src="/images/flower.svg"
-                alt="Camera Icon"
-                width={80}
-                height={80}
-                layout="responsive"
-                className="filter invert"
+                alt=""
+                width={40}
+                height={40}
+                className="w-full h-full object-contain opacity-90"
+                style={{ filter: "invert(1)" }}
               />
             </div>
             <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
@@ -57,14 +58,14 @@ export default function EventDetails() {
           {/* Welcome Guests */}
           <div className="flex items-center gap-4">
             <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
-            <div className="w-[40px] flex-shrink-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center">
               <Image
                 src="/images/cheer.svg"
-                alt="Flower Icon"
-                width={80}
-                height={80}
-                layout="responsive"
-                className="filter invert"
+                alt=""
+                width={40}
+                height={40}
+                className="w-full h-full object-contain opacity-90"
+                style={{ filter: "invert(1)" }}
               />
             </div>
             <div className="flex-1 text-left">
@@ -84,14 +85,14 @@ export default function EventDetails() {
               <p className="text-base lg:text-xl uppercase">Lễ vu quy</p>
               <p className="text-base lg:text-xl uppercase">Ceremony</p>
             </div>
-            <div className="w-[40px] flex-shrink-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center">
               <Image
                 src="/images/ring.svg"
-                alt="Rings Icon"
-                width={80}
-                height={80}
-                layout="responsive"
-                className="filter invert"
+                alt=""
+                width={40}
+                height={40}
+                className="w-full h-full object-contain opacity-90"
+                style={{ filter: "invert(1)" }}
               />
             </div>
             <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
@@ -99,14 +100,14 @@ export default function EventDetails() {
           {/* Dinner */}
           <div className="flex items-center gap-4">
             <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
-            <div className="w-[40px]  flex-shrink-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center">
               <Image
                 src="/images/camera.svg"
-                alt="Dinner Icon"
-                width={80}
-                height={80}
-                layout="responsive"
-                className="filter invert"
+                alt=""
+                width={40}
+                height={40}
+                className="w-full h-full object-contain opacity-90"
+                style={{ filter: "invert(1)" }}
               />
             </div>
             <div className="flex-1 text-left">
@@ -129,6 +130,6 @@ export default function EventDetails() {
           </div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }

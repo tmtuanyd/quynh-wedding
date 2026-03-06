@@ -7,16 +7,25 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col text-wedding items-center justify-center gap-8 py-16 px-4 sm:px-6 bg-gradient-to-b from-[#fdf8f8] to-[#faf5f5]"
+      className="min-h-screen flex flex-col text-wedding items-center justify-center gap-8 py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-gradient-to-b from-[#fdf8f8] to-[#faf5f5]"
     >
       <div className="text-center max-w-2xl w-full">
-        <Image
-          src="/images/about.svg"
-          alt="Wedding"
-          width={120}
-          height={73}
-          className="mx-auto opacity-80"
-        />
+        <motion.div
+          className="flex flex-col items-center"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="h-px w-12 bg-[var(--wedding-accent-light)] mb-6" />
+          <Image
+            src="/images/about.svg"
+            alt=""
+            width={120}
+            height={73}
+            className="mx-auto opacity-80"
+          />
+        </motion.div>
 
         <motion.div
           className="mt-10"
@@ -87,63 +96,56 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* Trang trí & nút liên hệ */}
+        {/* Trang trí & phần liên hệ — đồng bộ font, màu theme */}
         <motion.div
-          className="flex justify-center items-center gap-6 sm:gap-10 pt-12 relative"
+          className="flex flex-col items-center pt-12 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="w-16 sm:w-24 lg:w-28 flex-shrink-0">
-            <Image
-              src="/images/decor-left.svg"
-              alt=""
-              width={112}
-              height={84}
-              className="w-full h-auto opacity-70"
-            />
-          </div>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="tel:0975294512"
-              className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--wedding-accent)] text-white shadow-lg hover:opacity-90 transition-opacity duration-300"
-              aria-label="Gọi điện"
-            >
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-wedding-secondary/80 mb-4 [font-family:var(--font-playfair-display)]">
+            Liên hệ
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
+            <div className="w-16 sm:w-24 lg:w-28 flex-shrink-0">
               <Image
-                src="/images/phone.svg"
+                src="/images/decor-left.svg"
                 alt=""
-                width={22}
-                height={22}
-                className="invert"
+                width={112}
+                height={84}
+                className="w-full h-auto opacity-70"
               />
-            </a>
-            <a
-              href="https://maps.app.goo.gl/B9ev2rTtPUoK3WYP7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--wedding-accent)] text-white shadow-lg hover:opacity-90 transition-opacity duration-300"
-              aria-label="Xem bản đồ"
-            >
-              <Image
-                src="/images/map.svg"
-                alt=""
-                width={22}
-                height={22}
-                className="invert"
-              />
-            </a>
-          </div>
+            </div>
 
-          <div className="w-16 sm:w-24 lg:w-28 flex-shrink-0">
-            <Image
-              src="/images/decor-right.svg"
-              alt=""
-              width={112}
-              height={84}
-              className="w-full h-auto opacity-70"
-            />
+            <div className="flex items-center gap-3">
+              <a
+                href="tel:0856200162"
+                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--wedding-accent)] text-white shadow-lg hover:opacity-90 transition-opacity duration-300 [&_img]:invert"
+                aria-label="Gọi điện"
+              >
+                <Image src="/images/phone.svg" alt="" width={22} height={22} />
+              </a>
+              <a
+                href="https://maps.app.goo.gl/qJM7wx2xMr88xyr8A?g_st=ic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--wedding-accent)] text-white shadow-lg hover:opacity-90 transition-opacity duration-300 [&_img]:invert"
+                aria-label="Xem bản đồ"
+              >
+                <Image src="/images/map.svg" alt="" width={22} height={22} />
+              </a>
+            </div>
+
+            <div className="w-16 sm:w-24 lg:w-28 flex-shrink-0">
+              <Image
+                src="/images/decor-right.svg"
+                alt=""
+                width={112}
+                height={84}
+                className="w-full h-auto opacity-70"
+              />
+            </div>
           </div>
         </motion.div>
       </div>

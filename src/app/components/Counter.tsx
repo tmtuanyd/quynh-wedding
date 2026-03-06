@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from "react";
+"use client";
 
-const Counter = () => {
-  const weddingDate = new Date("2026-04-05T08:00:00"); // Ngày cưới
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const weddingDate = new Date("2026-04-05T08:00:00");
+
+function useTimeLeft() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -10,36 +14,77 @@ const Counter = () => {
   });
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const tick = () => {
       const now = new Date();
-      const difference = weddingDate.getTime() - now.getTime();
+      const diff = weddingDate.getTime() - now.getTime();
+      if (diff <= 0) return;
+      setTimeLeft({
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((diff / (1000 * 60)) % 60),
+        seconds: Math.floor((diff / 1000) % 60),
+      });
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
 
-      if (difference <= 0) {
-        clearInterval(timer);
-        return;
-      }
+  return timeLeft;
+}
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((difference / (1000 * 60)) % 60);
-      const seconds = Math.floor((difference / 1000) % 60);
+const Counter = () => {
+  const timeLeft = useTimeLeft();
 
-      setTimeLeft({ days, hours, minutes, seconds });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [weddingDate]);
+  const blocks = [
+    { value: timeLeft.days, label: "Ngày" },
+    { value: timeLeft.hours, label: "Giờ" },
+    { value: timeLeft.minutes, label: "Phút" },
+    { value: timeLeft.seconds, label: "Giây" },
+  ];
 
   return (
-    <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-wedding text-wedding">
-      <p className="font-great text-3xl sm:text-4xl text-wedding-accent">Countdown</p>
-      <div className="text-center font-medium text-lg sm:text-xl text-wedding-secondary mt-4">
-        <p>
-          {timeLeft.days} ngày {timeLeft.hours} giờ {timeLeft.minutes} phút{" "}
-          {timeLeft.seconds} giây
+    <section className="w-full flex flex-col items-center justify-center py-20 sm:py-24 lg:py-28 px-4 sm:px-6 bg-gradient-to-b from-[var(--wedding-bg-alt)] to-[var(--wedding-bg)] text-wedding">
+      <motion.div
+        className="w-full max-w-4xl mx-auto text-center"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="mb-5 h-px w-12 mx-auto bg-[var(--wedding-accent-light)]" />
+        <h2 className="font-great text-4xl sm:text-5xl lg:text-6xl text-wedding-accent tracking-wide">
+          Countdown
+        </h2>
+        <p className="text-sm sm:text-base uppercase tracking-[0.2em] text-wedding-secondary/90 mt-2 [font-family:var(--font-playfair-display)]">
+          05 · 04 · 2026
         </p>
-        <p className="font-great mt-4 text-wedding">Until the Wedding Day!</p>
-      </div>
+
+        {/* 4 ô số lớn — đồng bộ scale với section khác */}
+        <div className="grid grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mt-10 sm:mt-12 lg:mt-14">
+          {blocks.map(({ value, label }, i) => (
+            <motion.div
+              key={label}
+              className="flex flex-col items-center justify-center rounded-2xl bg-white/70 backdrop-blur-sm border border-[var(--wedding-border)] shadow-[0_4px_24px_rgba(61,46,46,0.06)] py-6 sm:py-8 lg:py-10 px-3 sm:px-4"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+            >
+              <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-wedding-accent tabular-nums [font-family:var(--font-playfair-display)] leading-none">
+                {String(value).padStart(2, "0")}
+              </span>
+              <span className="text-xs sm:text-sm uppercase tracking-widest text-wedding-secondary mt-2 sm:mt-3 [font-family:var(--font-playfair-display)]">
+                {label}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        <p className="font-great text-2xl sm:text-3xl lg:text-4xl text-wedding mt-10 sm:mt-12">
+          Until the Wedding Day!
+        </p>
+      </motion.div>
     </section>
   );
 };

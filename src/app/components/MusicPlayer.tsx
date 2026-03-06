@@ -60,16 +60,16 @@ export default function BackgroundMusic() {
   return (
     <>
       <audio ref={audioRef} loop src="/music/bg-music.mp3" />
-      <div className="flex flex-col gap-2 fixed bottom-5 right-5">
+      <div className="flex flex-col gap-2 fixed bottom-5 right-5 z-[9999]">
         <button
           onClick={openModal}
-          className=" bg-red-400 hover:bg-red-400/30 backdrop-blur-md p-2 rounded-full text-white z-50 zoom-animation"
+          className="bg-red-400 hover:bg-red-400/30 backdrop-blur-md p-2 rounded-full text-white zoom-animation"
         >
           <GiftIcon size={20} />
         </button>
         <button
           onClick={toggleMusic}
-          className=" bg-red-400 hover:bg-red-400/30 backdrop-blur-md p-2 rounded-full text-white z-50"
+          className="bg-red-400 hover:bg-red-400/30 backdrop-blur-md p-2 rounded-full text-white"
         >
           {isPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
         </button>

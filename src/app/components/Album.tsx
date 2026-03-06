@@ -1,197 +1,132 @@
-import React from "react";
-import { motion } from "framer-motion";
+"use client";
 
-const images = [
-  "/images/album/1.jpg",
-  "/images/album/2.jpg",
-  "/images/album/3.jpg",
-  "/images/album/4.jpg",
-  "/images/album/9.jpg",
-  "/images/album/6.jpg",
-  "/images/album/7.jpg",
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+const ALBUM2_FILES = [
+  "Copy of DSC08541_1 Large.jpeg",
+  "Copy of DSC08427_1 Large.jpeg",
+  "Copy of DSC08318_1 Large.jpeg",
+  "Copy of DSC08342_1 Large.jpeg",
+  "Copy of DSC08712_1 Large.jpeg",
+  "Copy of DSC08675_1 Large.jpeg",
+  "Copy of DSC08553_1 Large.jpeg",
+  "Copy of DSC08725_1 Large.jpeg",
+  "Copy of DSC08573_1 Large.jpeg",
+  "Copy of DSC08503_1 Large.jpeg",
+  "Copy of DSC08435_1 Large.jpeg",
+  "Copy of DSC08324_1 Large.jpeg",
+  "Copy of DSC08319_1 Large.jpeg",
+  "Copy of DSC08733_1 Large.jpeg",
+  "Copy of DSC08740_1 Large.jpeg",
+  "Copy of DSC08659_1 Large.jpeg",
+  "Copy of DSC08702_1 Large.jpeg",
+  "Copy of DSC08696_1 Large.jpeg",
+  "Copy of DSC08459_1 Large.jpeg",
+  "Copy of DSC08334_1 Large.jpeg",
+  "Copy of DSC08685_1 Large.jpeg",
+  "Copy of DSC08492_1 Large.jpeg",
+  "Copy of DSC08713_1 Large.jpeg",
+  "Copy of DSC08752_1 Large.jpeg",
+  "Copy of DSC08591_1 Large.jpeg",
 ];
 
-const leftAnimation = {
-  hidden: { x: -100, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 1 } },
-};
+const ALBUM2_IMAGES = ALBUM2_FILES.map(
+  (name) => `/images/album2/${encodeURIComponent(name)}`
+);
 
-const rightAnimation = {
-  hidden: { x: 100, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 1 } },
-};
+const PHOTOS_PER_VIEW = 6;
+const ROTATE_INTERVAL_MS = 8000; // 8 giây đổi một lần
+const TOTAL_IMAGES = ALBUM2_IMAGES.length;
+const BATCH_COUNT = Math.ceil(TOTAL_IMAGES / PHOTOS_PER_VIEW);
+
+/** Luôn trả về đủ PHOTOS_PER_VIEW ảnh; nếu thiếu thì lặp lại từ đầu để không bị lẻ. */
+function getBatchImages(batchIndex: number) {
+  const start = (batchIndex % BATCH_COUNT) * PHOTOS_PER_VIEW;
+  const result: string[] = [];
+  for (let i = 0; i < PHOTOS_PER_VIEW; i++) {
+    result.push(ALBUM2_IMAGES[(start + i) % TOTAL_IMAGES]);
+  }
+  return result;
+}
+
+function getBackgroundImage(batchIndex: number) {
+  const start = (batchIndex % BATCH_COUNT) * PHOTOS_PER_VIEW;
+  return ALBUM2_IMAGES[start % TOTAL_IMAGES];
+}
 
 const Album = () => {
+  const [batchIndex, setBatchIndex] = useState(0);
+  const batchImages = getBatchImages(batchIndex);
+  const bgImage = getBackgroundImage(batchIndex);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setBatchIndex((i) => (i + 1) % BATCH_COUNT);
+    }, ROTATE_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <div className="w-full max-w-6xl mx-auto overflow-x-hidden py-12 px-4 bg-wedding">
-      <div className="w-[100px] h-[100px] mx-auto">
-        <img src="/images/heart.png" alt="" />
+    <section
+      aria-label="Album ảnh cưới"
+      className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center py-16 sm:py-20 px-4"
+    >
+      {/* Background — ảnh album thay đổi theo lô */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={batchIndex}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${bgImage})` }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2 }}
+          />
+        </AnimatePresence>
+        {/* Overlay — mờ nhẹ phía dưới, tông ấm không trắng gắt */}
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-[rgba(253,245,248,0.92)] via-[rgba(255,250,252,0.4)] via-35% to-transparent"
+          aria-hidden
+        />
       </div>
-      <h2 className="text-center text-wedding-accent text-4xl font-great mb-8">
-        Wedding Album
-      </h2>
-      <div className="flex flex-col gap-2">
-        {/* First Row */}
-        {/* <div className="grid grid-cols-3 gap-2">
+
+      {/* Nội dung */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-2">
+        {/* Khung 6 ảnh — 3 cột x 2 hàng, ảnh to hơn */}
+        <AnimatePresence mode="wait">
           <motion.div
-            className="col-span-2 "
-            variants={leftAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            key={batchIndex}
+            className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 w-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            <img
-              src={images[0]}
-              alt="Photo 1"
-              className="w-full  object-cover rounded-lg shadow-lg"
-            />
+            {batchImages.map((src, i) => (
+              <motion.div
+                key={`${batchIndex}-${i}-${src}`}
+                className="aspect-square overflow-hidden rounded-xl sm:rounded-2xl shadow-xl ring-1 ring-white/30 bg-white/10 backdrop-blur-sm"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+              >
+                <Image
+                  src={src}
+                  alt={`Ảnh cưới ${batchIndex * PHOTOS_PER_VIEW + i + 1}`}
+                  width={480}
+                  height={480}
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 280px"
+                  className="h-full w-full object-cover"
+                />
+              </motion.div>
+            ))}
           </motion.div>
-          <motion.div
-            className="grid grid-rows-2 gap-2"
-            variants={rightAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <img
-              src={images[1]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={images[2]}
-              alt="Photo 3"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </motion.div>
-        </div> */}
-        {/* Second Row */}
-        {/* <div className="grid grid-cols-3 gap-2">
-          <motion.div
-            className="grid grid-rows-2 gap-2"
-            variants={rightAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <img
-              src={images[3]}
-              alt="Photo 2"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={images[4]}
-              alt="Photo 3"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </motion.div>
-          <motion.div
-            className="col-span-2 "
-            variants={leftAnimation}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <img
-              src={images[5]}
-              alt="Photo 1"
-              className="w-full  object-cover rounded-lg shadow-lg"
-            />
-          </motion.div>
-        </div> */}
-        {/* Third Row */}
-        <div className="grid grid-cols-12 gap-2">
-          <div className="grid grid-rows-3 col-span-7 gap-2">
-            <motion.div
-              className="overflow-hidden"
-              variants={leftAnimation}
-              initial="hidden"
-              whileInView="visible"
-            >
-              <img
-                src={images[3]}
-                alt="Photo 2"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </motion.div>
-            <motion.div
-              variants={leftAnimation}
-              initial="hidden"
-              whileInView="visible"
-              className="overflow-hidden "
-            >
-              <img
-                src={images[1]}
-                alt="Photo 2"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </motion.div>
-            <motion.div
-              variants={leftAnimation}
-              initial="hidden"
-              whileInView="visible"
-              className="overflow-hidden "
-            >
-              <img
-                src={images[4]}
-                alt="Photo 2"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </motion.div>
-          </div>
-          <div className="grid grid-rows-4 col-span-5 gap-2">
-            <motion.div
-              variants={rightAnimation}
-              initial="hidden"
-              whileInView="visible"
-              className="overflow-hidden "
-            >
-              <img
-                src={images[0]}
-                alt="Photo 2"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </motion.div>
-            <motion.div
-              variants={rightAnimation}
-              initial="hidden"
-              whileInView="visible"
-              className="overflow-hidden "
-            >
-              <img
-                src={images[2]}
-                alt="Photo 2"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </motion.div>
-            <motion.div
-              variants={rightAnimation}
-              initial="hidden"
-              whileInView="visible"
-              className="overflow-hidden "
-            >
-              <img
-                src={images[5]}
-                alt="Photo 2"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </motion.div>
-            <motion.div
-              variants={rightAnimation}
-              initial="hidden"
-              whileInView="visible"
-              className="overflow-hidden "
-            >
-              <img
-                src={images[6]}
-                alt="Photo 2"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </motion.div>
-          </div>
-        </div>
+        </AnimatePresence>
       </div>
-    </div>
+    </section>
   );
 };
 

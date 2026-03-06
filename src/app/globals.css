@@ -10,6 +10,9 @@
   --wedding-bg-alt: #faf5f5;
   --wedding-card: rgba(255, 252, 250, 0.98);
   --wedding-border: rgba(232, 212, 212, 0.6);
+  --section-padding-y: 4rem;
+  --section-padding-y-lg: 6rem;
+  --content-max: 72rem;
 
   --primary-color: #f7a8b8;
   --secondary-color: #f9f4f4;
@@ -70,6 +73,10 @@
   color: var(--yellow-text);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--wedding-text);
   font-family: var(--font-playfair-display);
@@ -84,11 +91,38 @@ body {
 }
 
 section {
-  padding: 2rem 1rem;
+  scroll-margin-top: 1rem;
+}
+section:not(#hero) {
+  padding: var(--section-padding-y) 1rem;
 }
 @media (min-width: 640px) {
-  section {
-    padding: 2rem 2rem;
+  section:not(#hero) {
+    padding: var(--section-padding-y) 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  section:not(#hero) {
+    padding: var(--section-padding-y-lg) 2rem;
+  }
+}
+#hero {
+  padding: 0;
+}
+
+/* Focus visible — trợ năng, giao diện hiện đại */
+:focus-visible {
+  outline: 2px solid var(--wedding-accent);
+  outline-offset: 2px;
+}
+
+/* Giảm chuyển động nếu user bật prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -109,9 +143,9 @@ section {
     ),
     url(/images/album/8.jpg);
   background-attachment: fixed;
-  background-position: center 18%;
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: 100% 100%, 130%;
+  background-size: 100% 100%, cover;
 }
 
 .thank-bg {
@@ -120,7 +154,7 @@ section {
       rgba(80, 80, 80, 1),
       rgba(240, 240, 240, 0.02)
     ),
-    url(/images/album/10.JPG);
+    url(/images/thank.jpeg);
   /* background-attachment: fixed; */
   background-position: center;
   background-repeat: no-repeat;
@@ -206,9 +240,9 @@ section {
   .bride-bg {
     background-attachment: scroll; /* Chuyển sang scroll trên thiết bị di động */
   }
-  /* Hero mobile: ảnh cô dâu chú rể đưa lên cao hơn */
+  /* Hero mobile: ảnh phủ từ trên xuống, không khoảng trắng */
   .hero-bg {
-    background-position: center 12%;
+    background-position: center top;
   }
   .welcome-bg {
     background-position: center 28%;
@@ -247,13 +281,12 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(184, 112, 112, 0.2);
 }
 
-/* Smooth transitions for images */
-img {
-  transition: transform 0.3s ease;
+/* Smooth transitions for images (tránh scale toàn cục trong grid — dùng trên wrapper) */
+.album-item img {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-img:hover {
-  transform: scale(1.05);
+.album-item:hover img {
+  transform: scale(1.03);
 }
 
 /* New gradient background */
