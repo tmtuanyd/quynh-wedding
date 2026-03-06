@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Thanks = () => {
   return (
     <motion.section
-      className="thank-bg relative isolate flex min-h-[100dvh] items-end justify-center overflow-hidden px-4 pt-16 pb-10 sm:pt-20 sm:pb-14"
+      className="thank-bg relative isolate flex min-h-[100dvh] items-end justify-center overflow-hidden px-4 pt-16 pb-20 sm:pt-20 sm:pb-24"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -49,17 +49,6 @@ const Thanks = () => {
           transition={{ duration: 0.55, delay: 0.32 }}
         >
           Cảm ơn bạn đã dành thời gian quý báu để chung vui cùng chúng mình.
-        </motion.p>
-
-        <motion.p
-          className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-white/85 [font-family:var(--font-playfair-display)]"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.42 }}
-        >
-          Sự hiện diện và lời chúc của bạn là món quà ý nghĩa nhất trong ngày
-          đặc biệt của Tạ Như Quỳnh &amp; Chang Shu Yu.
         </motion.p>
 
         <motion.div
