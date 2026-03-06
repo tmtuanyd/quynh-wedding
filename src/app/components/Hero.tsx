@@ -8,11 +8,11 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="h-screen min-h-[100dvh] w-full flex flex-col items-center justify-end hero-bg relative pb-10 sm:pb-14 lg:pb-16"
+      className="h-screen min-h-[100dvh] w-full flex flex-col items-center justify-end hero-bg relative pb-20 sm:pb-24 lg:pb-28"
     >
       {/* Lớp phủ sáng phía dưới — chữ dễ đọc, khớp theme */}
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--wedding-bg)] via-[rgba(253,248,248,0.92)] to-transparent pointer-events-none" aria-hidden />
-      <div className="relative z-10 w-full max-w-lg mx-auto px-4 mb-8 sm:mb-12 text-wedding">
+      <div className="relative z-10 w-full max-w-lg mx-auto px-4 mb-16 sm:mb-20 lg:mb-24 text-wedding">
         <div className="text-center space-y-4">
           <h1 className="text-4xl lg:text-6xl font-great">
             We Are Getting Married!
@@ -81,7 +81,7 @@ export default function Hero() {
                 );
               })}
           </div>
-          <div className="mt-5 sm:mt-6">
+          <div className="mt-10 sm:mt-12">
             <p className="uppercase text-wxl text-center tracking-wider">
               Quyết định bên nhau trọn đời
             </p>
