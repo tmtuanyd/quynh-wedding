@@ -112,7 +112,7 @@ const Album = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={batchIndex}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-top bg-no-repeat"
             style={{ backgroundImage: `url(${bgImage})` }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -153,7 +153,7 @@ const Album = () => {
                   width={480}
                   height={480}
                   sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 280px"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top"
                 />
               </motion.div>
             ))}
