@@ -121,7 +121,7 @@ export default function About() {
             <div className="flex items-center gap-3">
               <a
                 href="tel:0856200162"
-                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--wedding-accent)] text-white shadow-lg hover:opacity-90 transition-opacity duration-300 [&_img]:invert"
+                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--wedding-accent)] text-white shadow-lg hover:opacity-90 transition-opacity duration-300 [&_img]:brightness-0 [&_img]:invert"
                 aria-label="Gọi điện"
               >
                 <Image src="/images/phone.svg" alt="" width={22} height={22} />
@@ -130,7 +130,7 @@ export default function About() {
                 href="https://maps.app.goo.gl/qJM7wx2xMr88xyr8A?g_st=ic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--wedding-accent)] text-white shadow-lg hover:opacity-90 transition-opacity duration-300 [&_img]:invert"
+                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--wedding-accent)] text-white shadow-lg hover:opacity-90 transition-opacity duration-300 [&_img]:brightness-0 [&_img]:invert"
                 aria-label="Xem bản đồ"
               >
                 <Image src="/images/map.svg" alt="" width={22} height={22} />
