@@ -8,7 +8,6 @@ const ALBUM2_FILES = [
   "Copy of DSC08541_1 Large.jpeg",
   "Copy of DSC08427_1 Large.jpeg",
   "Copy of DSC08318_1 Large.jpeg",
-  "Copy of DSC08342_1 Large.jpeg",
   "Copy of DSC08712_1 Large.jpeg",
   "Copy of DSC08675_1 Large.jpeg",
   "Copy of DSC08553_1 Large.jpeg",
