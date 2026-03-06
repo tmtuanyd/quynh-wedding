@@ -1,19 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { GiftIcon, Volume2, VolumeX } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import Modal from "react-modal";
 
 const customStyles = {
+  overlay: {
+    zIndex: 12000,
+    backgroundColor: "rgba(0, 0, 0, 0.45)",
+  },
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    background: "",
+    inset: "0",
+    zIndex: 12001,
+    background: "transparent",
     border: "none",
+    padding: "1rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 };
 
@@ -49,6 +53,20 @@ export default function BackgroundMusic() {
     };
   }, []);
 
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+
+    if (modalIsOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = originalOverflow;
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [modalIsOpen]);
+
   function openModal() {
     setIsOpen(true);
   }
@@ -79,16 +97,20 @@ export default function BackgroundMusic() {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <div className="flex justify-end">
+        <div className="relative w-full max-w-md rounded-2xl bg-white p-3 shadow-2xl">
           <button
             onClick={closeModal}
-            className=" bg-red-400 hover:bg-red-400/30 backdrop-blur-md p-2 w-[40px] h-[40px] rounded-full text-white z-50 ml-auto mb-4"
+            className="absolute right-3 top-3 bg-red-400 hover:bg-red-400/80 p-2 w-[40px] h-[40px] rounded-full text-white z-50"
           >
             x
           </button>
-        </div>
 
-        <img src="/images/qr.JPG" />
+          <img
+            src="/images/qr.JPG"
+            alt="QR quà mừng"
+            className="w-full h-auto rounded-xl"
+          />
+        </div>
       </Modal>
     </>
   );
