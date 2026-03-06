@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 interface Props {
   onStart: () => void;
@@ -23,39 +23,115 @@ export default function WelcomeIntro({
     <AnimatePresence>
       {showIntro && (
         <motion.div
-          className="fixed inset-0 text-white flex items-center justify-center flex-col z-50 welcome-bg"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-end sm:justify-center overflow-hidden"
           initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          <div className="h-[300px]" />
-          <motion.p
-            className="text-3xl mb-8 text-center font-extralight font-great"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-          >
-            Mai Huế <span className="mx-2 font-clicker">&</span> Thế Chiến{" "}
-            <br />
-            18/05/2025
-          </motion.p>
+          {/* Background - ảnh cô dâu chú rể (không blur, ảnh rõ) */}
+          <div className="absolute inset-0 welcome-bg" />
 
-          <button
-            onClick={handleStart}
-            className="px-10 py-4 bg-gradient-to-r from-gray-200 to-gray-400 text-gray-900 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl hover:from-gray-300 hover:to-gray-500 transition-all duration-300 transform hover:scale-105 border border-gray-300"
-          >
-            Wedding Invitation 💍
-          </button>
-
+          {/* Content: mobile = dán dưới để ảnh lộ nửa trên, desktop = giữa */}
           <motion.div
-            className="mt-8 animate-bounce flex flex-col items-center justify-center"
+            className="relative z-10 w-full max-w-lg px-6 py-8 sm:px-8 sm:py-12 mx-4 mb-6 sm:mb-0 text-center pb-safe"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {/* Không dùng backdrop-blur để ảnh nền không bị mờ; dùng nền tối nhẹ cho chữ rõ */}
+            <div className="rounded-2xl sm:rounded-2xl bg-black/50 border border-white/20 shadow-2xl px-6 py-8 sm:px-10 sm:py-12">
+              {/* Decorative top line */}
+              <motion.div
+                className="mx-auto mb-6 h-px w-16 bg-gradient-to-r from-transparent via-white/60 to-transparent"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+              />
+
+              <motion.p
+                className="text-white text-4xl sm:text-5xl md:text-6xl font-great font-extralight tracking-wide leading-tight"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+              >
+                Tạ Như Quỳnh
+              </motion.p>
+              <motion.span
+                className="inline-block font-clicker text-3xl sm:text-4xl text-[#f5e6d3] my-2"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.65, duration: 0.5 }}
+              >
+                &amp;
+              </motion.span>
+              <motion.p
+                className="text-white text-4xl sm:text-5xl md:text-6xl font-great font-extralight tracking-wide leading-tight"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+              >
+                Chang Shu Yu
+              </motion.p>
+
+              {/* Divider with date */}
+              <motion.div
+                className="flex items-center justify-center gap-4 my-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.85, duration: 0.6 }}
+              >
+                <span className="h-px flex-1 max-w-[60px] bg-white/40" />
+                <span className="text-white/95 text-sm sm:text-base tracking-[0.3em] uppercase [font-family:var(--font-playfair-display)]">
+                  18 · 05 · 2025
+                </span>
+                <span className="h-px flex-1 max-w-[60px] bg-white/40" />
+              </motion.div>
+
+              <motion.p
+                className="text-white/80 text-sm font-light tracking-widest uppercase mb-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.5 }}
+              >
+                Trân trọng kính mời
+              </motion.p>
+
+              <motion.button
+                onClick={handleStart}
+                className="group relative px-10 py-4 rounded-full text-base font-medium text-gray-900 overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1, duration: 0.5 }}
+                whileHover={{ boxShadow: "0 0 32px rgba(245, 230, 211, 0.4)" }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-[#f5e6d3] via-[#faf5ef] to-[#f5e6d3]" />
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative flex items-center gap-2">
+                  Wedding Invitation
+                  <span className="text-lg" aria-hidden>💍</span>
+                </span>
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* Scroll hint - dưới card trên mobile */}
+          <motion.div
+            className="absolute bottom-3 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 1.4, duration: 0.5 }}
           >
-            <ChevronUp />
-            <span>Click</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] font-light">
+              Mở thiệp
+            </span>
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            >
+              <ChevronDown className="w-5 h-5" strokeWidth={1.5} />
+            </motion.div>
           </motion.div>
         </motion.div>
       )}

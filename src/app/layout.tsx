@@ -7,6 +7,8 @@ import {
   Clicker_Script,
   Lora,
   Hepta_Slab,
+  Cormorant_Garamond,
+  Playfair_Display,
 } from "next/font/google";
 
 const greatVibes = Great_Vibes({
@@ -44,8 +46,23 @@ const heptaSlab = Hepta_Slab({
   variable: "--font-hepta-slab",
 });
 
+const cormorantGaramond = Cormorant_Garamond({
+  weight: ["300", "400", "500", "600"],
+  subsets: ["latin", "vietnamese"],
+  display: "swap",
+  variable: "--font-cormorant-garamond",
+});
+
+/* Font thiệp cưới truyền thống - thanh lịch, dùng nhiều trong thiệp in */
+const playfairInvitation = Playfair_Display({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin", "vietnamese"],
+  display: "swap",
+  variable: "--font-playfair-invitation",
+});
+
 export const metadata: Metadata = {
-  title: "Mai Huế & Thế Chiến",
+  title: "Tạ Như Quỳnh & Chang Shu Yu",
   description: "Chào mừng bạn đến với lễ cưới của chúng tôi",
 };
 
@@ -65,7 +82,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${styleScript.className} ${playfairDisplay.className} ${greatVibes.className} ${clickerScript.className} ${heptaSlab.className}`}
+        className={`${styleScript.className} ${playfairDisplay.className} ${greatVibes.className} ${clickerScript.className} ${heptaSlab.className} ${cormorantGaramond.className} ${playfairInvitation.className}`}
       >
         <main>{children}</main>
       </body>

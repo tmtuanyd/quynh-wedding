@@ -142,8 +142,9 @@ section {
 .welcome-bg {
   background: linear-gradient(
       to top,
-      rgba(80, 80, 80, 1),
-      rgba(240, 240, 240, 0.08)
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.05),
+      transparent 50%
     ),
     url(/images/welcome.jpg);
   background-attachment: fixed;
