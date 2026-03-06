@@ -27,8 +27,9 @@ export default function EventDetails() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="mx-auto mb-8 h-px w-12 bg-[var(--wedding-accent-light)]" />
-        <h2 className="text-3xl sm:text-4xl font-great text-wedding-accent">Timeline</h2>
-        <p className="text-sm text-wedding-secondary/80 mt-2 uppercase tracking-widest [font-family:var(--font-playfair-display)]">05 · 04 · 2026</p>
+        <h2 className="text-3xl sm:text-4xl font-great text-wedding-accent">
+          Timeline
+        </h2>
 
         {/* Timeline */}
         <div className="flex flex-col gap-12">
@@ -53,11 +54,17 @@ export default function EventDetails() {
                 style={{ filter: "invert(1)" }}
               />
             </div>
-            <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
+            <div
+              className="flex-1 h-[1px] opacity-70"
+              style={{ backgroundColor: "var(--wedding-accent-light)" }}
+            ></div>
           </div>
           {/* Welcome Guests */}
           <div className="flex items-center gap-4">
-            <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
+            <div
+              className="flex-1 h-[1px] opacity-70"
+              style={{ backgroundColor: "var(--wedding-accent-light)" }}
+            ></div>
             <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center">
               <Image
                 src="/images/cheer.svg"
@@ -95,11 +102,17 @@ export default function EventDetails() {
                 style={{ filter: "invert(1)" }}
               />
             </div>
-            <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
+            <div
+              className="flex-1 h-[1px] opacity-70"
+              style={{ backgroundColor: "var(--wedding-accent-light)" }}
+            ></div>
           </div>
           {/* Dinner */}
           <div className="flex items-center gap-4">
-            <div className="flex-1 h-[1px] opacity-70" style={{ backgroundColor: "var(--wedding-accent-light)" }}></div>
+            <div
+              className="flex-1 h-[1px] opacity-70"
+              style={{ backgroundColor: "var(--wedding-accent-light)" }}
+            ></div>
             <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center">
               <Image
                 src="/images/camera.svg"
