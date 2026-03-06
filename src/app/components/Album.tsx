@@ -14,6 +14,7 @@ const ALBUM_FINAL_FILES = [
   "DSC02550 Medium.jpeg",
   "DSC02582 Medium.jpeg",
   "DSC02637 Medium.jpeg",
+  "DSC01941 Medium.jpeg",
   "Copy of DSC08318_1 Large.jpeg",
   "Copy of DSC08331_1 Large.jpeg",
 ];
