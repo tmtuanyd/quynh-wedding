@@ -37,33 +37,17 @@ function getBatchImages(batchIndex: number) {
   return result;
 }
 
-function getRandomBackgroundIndex(currentIndex: number) {
-  if (TOTAL_IMAGES <= 1) return 0;
-
-  let nextIndex = currentIndex;
-  while (nextIndex === currentIndex) {
-    nextIndex = Math.floor(Math.random() * TOTAL_IMAGES);
-  }
-
-  return nextIndex;
-}
-
 const Album = () => {
   const [batchIndex, setBatchIndex] = useState(0);
-  const [bgImageIndex, setBgImageIndex] = useState(0);
   const sectionRef = useRef<HTMLElement | null>(null);
   const isInView = useInView(sectionRef, { amount: 0.35 });
   const batchImages = getBatchImages(batchIndex);
-  const bgImage = ALBUM_IMAGES[bgImageIndex];
 
   useEffect(() => {
     if (!isInView) return;
 
-    setBgImageIndex((current) => getRandomBackgroundIndex(current));
-
     const id = setInterval(() => {
       setBatchIndex((i) => (i + 1) % BATCH_COUNT);
-      setBgImageIndex((current) => getRandomBackgroundIndex(current));
     }, ROTATE_INTERVAL_MS);
 
     return () => clearInterval(id);
@@ -73,30 +57,25 @@ const Album = () => {
     <section
       ref={sectionRef}
       aria-label="Album ảnh cưới"
-      className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center py-16 sm:py-20 px-4"
+      className="w-full min-h-screen bg-wedding overflow-hidden flex flex-col items-center justify-center py-16 sm:py-20 px-4"
     >
-      {/* Background — ảnh album thay đổi theo lô */}
-      <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={batchIndex}
-            className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-            style={{ backgroundImage: `url(${bgImage})` }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2 }}
-          />
-        </AnimatePresence>
-        {/* Overlay — mờ nhẹ phía dưới, tông ấm không trắng gắt */}
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-[rgba(253,245,248,0.92)] via-[rgba(255,250,252,0.4)] via-35% to-transparent"
-          aria-hidden
-        />
-      </div>
-
       {/* Nội dung */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-2">
+      <div className="w-full max-w-5xl mx-auto text-center px-2">
+        <motion.div
+          className="mb-8 sm:mb-10"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-4xl sm:text-5xl font-great text-wedding-accent">
+            Album Cưới
+          </h2>
+          <p className="mt-2 text-sm sm:text-base tracking-[0.18em] uppercase text-wedding-secondary [font-family:var(--font-playfair-display)]">
+            Những khoảnh khắc ngọt ngào của chúng mình
+          </p>
+        </motion.div>
+
         {/* Khung 6 ảnh — 3 cột x 2 hàng, ảnh to hơn */}
         <AnimatePresence mode="wait">
           <motion.div
