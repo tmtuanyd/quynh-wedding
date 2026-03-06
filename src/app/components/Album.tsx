@@ -1,8 +1,8 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ALBUM2_FILES = [
   "Copy of DSC08541_1 Large.jpeg",
@@ -65,8 +65,8 @@ const ALBUM3_FILES = [
 ];
 
 const ALBUM_IMAGES = [
-  ...ALBUM2_FILES.map((name) => `/images/album2/${encodeURIComponent(name)}`),
   ...ALBUM3_FILES.map((name) => `/images/album3/${encodeURIComponent(name)}`),
+  ...ALBUM2_FILES.map((name) => `/images/album2/${encodeURIComponent(name)}`),
 ];
 
 const PHOTOS_PER_VIEW = 6;
@@ -91,18 +91,24 @@ function getBackgroundImage(batchIndex: number) {
 
 const Album = () => {
   const [batchIndex, setBatchIndex] = useState(0);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const isInView = useInView(sectionRef, { amount: 0.35 });
   const batchImages = getBatchImages(batchIndex);
   const bgImage = getBackgroundImage(batchIndex);
 
   useEffect(() => {
+    if (!isInView) return;
+
     const id = setInterval(() => {
       setBatchIndex((i) => (i + 1) % BATCH_COUNT);
     }, ROTATE_INTERVAL_MS);
+
     return () => clearInterval(id);
-  }, []);
+  }, [isInView]);
 
   return (
     <section
+      ref={sectionRef}
       aria-label="Album ảnh cưới"
       className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center py-16 sm:py-20 px-4"
     >
