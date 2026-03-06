@@ -181,7 +181,7 @@ section:not(#hero) {
       rgba(35, 20, 20, 0.42) 100%
     ),
     url(/images/thank.jpeg);
-  background-position: center 24%;
+  background-position: 44% 24%;
   background-repeat: no-repeat;
   background-size: cover;
 }
