@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const daysInMonth = 31;
-  const startDay = 3;
+  const daysInMonth = 30; // Tháng 4
+  const startDay = 2; // 01/04/2026 là Thứ Tư
 
   return (
     <section
@@ -22,7 +22,7 @@ export default function Hero() {
 
       {/* Lịch */}
       <div className="mt-12 text-center ">
-        <p className="text-base lg:text-xl font-bold">MAY 2025</p>
+        <p className="text-base lg:text-xl font-bold">THÁNG 4 2026</p>
         <div className="grid grid-cols-7 gap-2 text-sm lg:text-base mt-4">
           {/* Hiển thị các ngày trong tuần */}
           {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map((day) => (
@@ -43,7 +43,7 @@ export default function Hero() {
             .fill(null)
             .map((_, i) => {
               const day = i + 1;
-              return day === 18 ? (
+              return day === 5 ? (
                 <motion.span
                   key={day}
                   className="relative flex items-center justify-center w-full aspect-square"

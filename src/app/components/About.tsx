@@ -42,8 +42,8 @@ export default function About() {
           <div>
             <div className="lg:pt-4">
               <h3 className="text-2xl lg:text-[34px]  uppercase tracking-tighter">
-                CHỦ NHẬT <span className="text-[45px] lg:text-[90px]">18</span>{" "}
-                tháng 5 2025
+                CHỦ NHẬT <span className="text-[45px] lg:text-[90px]">05</span>{" "}
+                tháng 4 2026
               </h3>
               <p className="text-base lg:text-[24px] mt-4">
                 <span className="mr-2">|</span>08:30-11:00{" "}

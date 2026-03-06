@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Counter = () => {
-  const weddingDate = new Date("2025-05-18T08:00:00"); // Ngày cưới
+  const weddingDate = new Date("2026-04-05T08:00:00"); // Ngày cưới
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
