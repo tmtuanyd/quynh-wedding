@@ -150,13 +150,13 @@ section:not(#hero) {
 
 .thank-bg {
   background: linear-gradient(
-      to top,
-      rgba(80, 80, 80, 1),
-      rgba(240, 240, 240, 0.02)
+      180deg,
+      rgba(255, 250, 250, 0.03) 0%,
+      rgba(110, 78, 78, 0.18) 52%,
+      rgba(35, 20, 20, 0.42) 100%
     ),
     url(/images/thank.jpeg);
-  /* background-attachment: fixed; */
-  background-position: center;
+  background-position: center 24%;
   background-repeat: no-repeat;
   background-size: cover;
 }

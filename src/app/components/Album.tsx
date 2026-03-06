@@ -4,70 +4,23 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const ALBUM2_FILES = [
-  "Copy of DSC08541_1 Large.jpeg",
-  "Copy of DSC08427_1 Large.jpeg",
+const ALBUM_FINAL_FILES = [
   "Copy of DSC08318_1 Large.jpeg",
-  "Copy of DSC08712_1 Large.jpeg",
-  "Copy of DSC08675_1 Large.jpeg",
-  "Copy of DSC08553_1 Large.jpeg",
-  "Copy of DSC08725_1 Large.jpeg",
-  "Copy of DSC08573_1 Large.jpeg",
-  "Copy of DSC08503_1 Large.jpeg",
-  "Copy of DSC08435_1 Large.jpeg",
-  "Copy of DSC08324_1 Large.jpeg",
-  "Copy of DSC08319_1 Large.jpeg",
-  "Copy of DSC08733_1 Large.jpeg",
-  "Copy of DSC08740_1 Large.jpeg",
-  "Copy of DSC08659_1 Large.jpeg",
-  "Copy of DSC08702_1 Large.jpeg",
-  "Copy of DSC08696_1 Large.jpeg",
-  "Copy of DSC08459_1 Large.jpeg",
-  "Copy of DSC08334_1 Large.jpeg",
-  "Copy of DSC08685_1 Large.jpeg",
-  "Copy of DSC08492_1 Large.jpeg",
-  "Copy of DSC08713_1 Large.jpeg",
-  "Copy of DSC08752_1 Large.jpeg",
-  "Copy of DSC08591_1 Large.jpeg",
-];
-
-const ALBUM3_FILES = [
-  "DSC01676 Medium.jpeg",
+  "Copy of DSC08331_1 Large.jpeg",
   "DSC01694 Medium.jpeg",
-  "DSC01725 Medium.jpeg",
-  "DSC01743 Medium.jpeg",
-  "DSC01778 Medium.jpeg",
-  "DSC01806 Medium.jpeg",
-  "DSC01832 Medium.jpeg",
-  "DSC01876 Medium.jpeg",
   "DSC01930 Medium.jpeg",
-  "DSC01941 Medium.jpeg",
-  "DSC01960 Medium.jpeg",
-  "DSC01980 Medium.jpeg",
   "DSC02045 Medium.jpeg",
-  "DSC02135 Medium.jpeg",
-  "DSC02153 Medium.jpeg",
   "DSC02203 Medium.jpeg",
   "DSC02240 Medium.jpeg",
-  "DSC02253 Medium.jpeg",
-  "DSC02276 Medium.jpeg",
-  "DSC02348 Medium.jpeg",
-  "DSC02411 Medium.jpeg",
   "DSC02435 Medium.jpeg",
-  "DSC02472 Medium.jpeg",
-  "DSC02529 Medium.jpeg",
   "DSC02550 Medium.jpeg",
   "DSC02582 Medium.jpeg",
-  "DSC02617 Medium.jpeg",
   "DSC02637 Medium.jpeg",
-  "DSC02647 Medium.jpeg",
-  "DSC02680 Medium.jpeg",
 ];
 
-const ALBUM_IMAGES = [
-  ...ALBUM3_FILES.map((name) => `/images/album3/${encodeURIComponent(name)}`),
-  ...ALBUM2_FILES.map((name) => `/images/album2/${encodeURIComponent(name)}`),
-];
+const ALBUM_IMAGES = ALBUM_FINAL_FILES.map(
+  (name) => `/images/album-final/${encodeURIComponent(name)}`,
+);
 
 const PHOTOS_PER_VIEW = 6;
 const ROTATE_INTERVAL_MS = 8000; // 8 giây đổi một lần
@@ -84,23 +37,33 @@ function getBatchImages(batchIndex: number) {
   return result;
 }
 
-function getBackgroundImage(batchIndex: number) {
-  const start = (batchIndex % BATCH_COUNT) * PHOTOS_PER_VIEW;
-  return ALBUM_IMAGES[start % TOTAL_IMAGES];
+function getRandomBackgroundIndex(currentIndex: number) {
+  if (TOTAL_IMAGES <= 1) return 0;
+
+  let nextIndex = currentIndex;
+  while (nextIndex === currentIndex) {
+    nextIndex = Math.floor(Math.random() * TOTAL_IMAGES);
+  }
+
+  return nextIndex;
 }
 
 const Album = () => {
   const [batchIndex, setBatchIndex] = useState(0);
+  const [bgImageIndex, setBgImageIndex] = useState(0);
   const sectionRef = useRef<HTMLElement | null>(null);
   const isInView = useInView(sectionRef, { amount: 0.35 });
   const batchImages = getBatchImages(batchIndex);
-  const bgImage = getBackgroundImage(batchIndex);
+  const bgImage = ALBUM_IMAGES[bgImageIndex];
 
   useEffect(() => {
     if (!isInView) return;
 
+    setBgImageIndex((current) => getRandomBackgroundIndex(current));
+
     const id = setInterval(() => {
       setBatchIndex((i) => (i + 1) % BATCH_COUNT);
+      setBgImageIndex((current) => getRandomBackgroundIndex(current));
     }, ROTATE_INTERVAL_MS);
 
     return () => clearInterval(id);

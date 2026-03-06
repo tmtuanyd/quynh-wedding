@@ -8,11 +8,20 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="h-screen min-h-[100dvh] w-full flex flex-col items-center justify-end hero-bg relative pb-20 sm:pb-24 lg:pb-28"
+      className="min-h-[100dvh] w-full flex flex-col items-center justify-end hero-bg relative pb-20 sm:pb-24 lg:pb-28"
     >
-      {/* Lớp phủ sáng phía dưới — chữ dễ đọc, khớp theme */}
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--wedding-bg)] via-[rgba(253,248,248,0.92)] to-transparent pointer-events-none" aria-hidden />
-      <div className="relative z-10 w-full max-w-lg mx-auto px-4 mb-16 sm:mb-20 lg:mb-24 text-wedding">
+      {/* Lớp phủ sáng mạnh hơn để chữ nổi rõ trên ảnh */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-[72%] bg-gradient-to-t from-[rgba(253,248,248,0.9)] via-[rgba(253,248,248,0.58)] to-transparent pointer-events-none"
+        aria-hidden
+      />
+      <div
+        className="relative z-10 w-full max-w-lg mx-auto px-4 mb-16 sm:mb-20 lg:mb-24 text-wedding"
+        style={{
+          textShadow:
+            "0 1px 0 rgba(255,255,255,0.62), 0 2px 8px rgba(70,40,40,0.1)",
+        }}
+      >
         <div className="text-center space-y-4">
           <h1 className="text-4xl lg:text-6xl font-great">
             We Are Getting Married!
@@ -23,11 +32,16 @@ export default function Hero() {
         </div>
 
         <div className="mt-6 sm:mt-8 text-center">
-          <p className="text-base lg:text-xl font-bold">THÁNG 4 2026</p>
+          <p className="text-base lg:text-xl font-semibold tracking-wide [font-family:var(--font-hepta-slab)] [font-variant-numeric:lining-nums_proportional-nums] leading-none">
+            THÁNG <span className="inline-block">4</span> 2026
+          </p>
           <div className="grid grid-cols-7 gap-x-3 sm:gap-x-4 gap-y-px text-sm lg:text-base mt-1.5 max-w-[340px] sm:max-w-[380px] mx-auto">
             {/* Hiển thị các ngày trong tuần */}
             {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map((day) => (
-              <span key={day} className="font-semibold text-center py-0.5 text-[10px] sm:text-xs">
+              <span
+                key={day}
+                className="font-semibold text-center py-0.5 text-[10px] sm:text-xs"
+              >
                 {day}
               </span>
             ))}
@@ -36,7 +50,10 @@ export default function Hero() {
             {Array(startDay)
               .fill(null)
               .map((_, i) => (
-                <span key={`empty-${i}`} className="w-full min-h-[22px] sm:min-h-[24px]" />
+                <span
+                  key={`empty-${i}`}
+                  className="w-full min-h-[22px] sm:min-h-[24px]"
+                />
               ))}
 
             {/* Hiển thị các ngày trong tháng */}
@@ -85,7 +102,9 @@ export default function Hero() {
             <p className="uppercase text-wxl text-center tracking-wider">
               Quyết định bên nhau trọn đời
             </p>
-            <p className="font-great text-2xl text-center mt-1">Save the date</p>
+            <p className="font-great text-2xl text-center mt-1">
+              Save the date
+            </p>
           </div>
         </div>
       </div>

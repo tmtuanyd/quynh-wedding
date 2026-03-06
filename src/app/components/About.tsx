@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -70,19 +70,22 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.15 }}
         >
           {/* Dòng 1: CHỦ NHẬT [số ngày to đậm] THÁNG 4 — flex items-baseline để số 05 không bị kéo xuống */}
-          <div className="flex flex-wrap justify-center items-baseline gap-x-2 text-lg sm:text-xl lg:text-2xl uppercase tracking-widest text-wedding [font-family:var(--font-playfair-display)] font-medium">
+          <div className="flex flex-wrap justify-center items-baseline gap-x-2 text-lg sm:text-xl lg:text-2xl uppercase tracking-widest text-wedding [font-family:var(--font-hepta-slab)] [font-variant-numeric:lining-nums_proportional-nums] font-medium">
             <span>Chủ Nhật</span>
-            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-wedding-accent">05</span>
+            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-wedding-accent">
+              05
+            </span>
             <span>Tháng 4</span>
           </div>
           {/* Dòng 2: 2026 */}
-          <p className="text-lg sm:text-xl lg:text-2xl uppercase tracking-widest text-wedding mt-1 [font-family:var(--font-playfair-display)] font-medium">
+          <p className="text-lg sm:text-xl lg:text-2xl uppercase tracking-widest text-wedding mt-1 [font-family:var(--font-hepta-slab)] font-medium">
             2026
           </p>
 
           {/* | 08:30-11:00 | Tại tư gia nhà gái */}
           <p className="text-sm sm:text-base lg:text-lg text-wedding/90 mt-6 [font-family:var(--font-playfair-display)]">
-            <span className="mx-1.5">|</span> 08:30-11:30 <span className="mx-1.5">|</span> Tại tư gia nhà gái
+            <span className="mx-1.5">|</span> 08:30-11:30{" "}
+            <span className="mx-1.5">|</span> Tại tư gia nhà gái
           </p>
 
           {/* Địa chỉ — italic, căn giữa */}
