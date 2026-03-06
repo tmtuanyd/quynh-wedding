@@ -97,7 +97,7 @@ section {
   background: var(--gradient);
 }
 
-/* Hero — phần dưới chuyển dần sang nền theme, không còn đen */
+/* Hero — lớp phủ sáng để chữ dễ đọc, blend sang theme */
 .hero-bg {
   background: linear-gradient(
       to top,
@@ -109,9 +109,9 @@ section {
     ),
     url(/images/album/8.jpg);
   background-attachment: fixed;
-  background-position: center top;
+  background-position: center 18%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%, 130%;
 }
 
 .thank-bg {
@@ -206,7 +206,10 @@ section {
   .bride-bg {
     background-attachment: scroll; /* Chuyển sang scroll trên thiết bị di động */
   }
-  /* Mobile: đẩy ảnh cô dâu chú rể lên cao hơn để thấy rõ mặt (card nằm dưới) */
+  /* Hero mobile: ảnh cô dâu chú rể đưa lên cao hơn */
+  .hero-bg {
+    background-position: center 12%;
+  }
   .welcome-bg {
     background-position: center 28%;
   }

@@ -79,7 +79,7 @@ export default function EventDetails() {
           <div className="flex items-center gap-4">
             <div className="flex-1 text-right">
               <p className="text-2xl lg:text-3xl font-semibold font-great">
-                10:30
+                11:30
               </p>
               <p className="text-base lg:text-xl uppercase">Lễ vu quy</p>
               <p className="text-base lg:text-xl uppercase">Ceremony</p>
@@ -111,7 +111,7 @@ export default function EventDetails() {
             </div>
             <div className="flex-1 text-left">
               <p className="text-2xl lg:text-3xl font-semibold font-great">
-                11:00
+                12:00
               </p>
               <p className="text-base lg:text-xl uppercase">Chụp hình</p>
               <p className="text-base lg:text-xl uppercase">Photography</p>
