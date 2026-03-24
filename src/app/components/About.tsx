@@ -84,7 +84,7 @@ export default function About() {
 
           {/* | 08:30-11:00 | Tại tư gia nhà gái */}
           <p className="text-sm sm:text-base lg:text-lg text-wedding/90 mt-6 [font-family:var(--font-playfair-display)]">
-            <span className="mx-1.5">|</span> 08:30-11:30{" "}
+            <span className="mx-1.5">|</span> 08:30-12:00{" "}
             <span className="mx-1.5">|</span> Tại tư gia nhà gái
           </p>
 

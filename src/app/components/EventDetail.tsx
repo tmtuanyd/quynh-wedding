@@ -87,7 +87,7 @@ export default function EventDetails() {
           <div className="flex items-center gap-4">
             <div className="flex-1 text-right">
               <p className="text-2xl lg:text-3xl font-semibold font-great">
-                11:30
+                10:30
               </p>
               <p className="text-base lg:text-xl uppercase">Lễ vu quy</p>
               <p className="text-base lg:text-xl uppercase">Ceremony</p>
